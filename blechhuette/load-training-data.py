@@ -11,9 +11,10 @@ HOUSING_PATH = "datasets/housing"
 
 # Pandas DataFrame docs: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html
 # Pandas readcsv: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html#pandas.read_csv
-def load_housing_data(housing_path = HOUSING_PATH):
+def load_housing_data(housing_path=HOUSING_PATH):
     csv_path = os.path.join(housing_path, "housing.csv")
     return pd.read_csv(csv_path)
+
 
 # expects data and a test ratio (0<ratio<1)
 # returns random split train dataset and test dataset
@@ -27,6 +28,7 @@ def split_testdata(data, test_ratio):
     test_indices = shuffled_indices[:test_set_size]
     train_indices = shuffled_indices[test_set_size:]
     return data.iloc[train_indices], data.iloc[test_indices]
+
 
 # Load the data
 housing = load_housing_data()
@@ -67,6 +69,7 @@ for train_index, test_index in spitting_strategy.split(housing, housing["income_
     strat_train_set = housing.loc[train_index]
     strat_test_set = housing.loc[test_index]
 
+
 for s in (strat_train_set, strat_test_set):
     s.drop("income_cat", axis=1, inplace=True)
 
@@ -75,16 +78,31 @@ housing.plot(kind="scatter", x="longitude", y="latitude", alpha=0.1)
 plt.show()
 
 
-
-housing.plot(kind="scatter", x="longitude", y="latitude", alpha=0.4, s=housing["population"]/100, label="population", figsize=(20,12),c="median_house_value",cmap=plt.get_cmap("jet"),colorbar=True)
+housing.plot(
+    kind="scatter",
+    x="longitude",
+    y="latitude",
+    alpha=0.4,
+    s=housing["population"] / 100,
+    label="population",
+    figsize=(20, 12),
+    c="median_house_value",
+    cmap=plt.get_cmap("jet"),
+    colorbar=True,
+)
 plt.legend()
 
 # Compute a correlation matrix
 corr_matrix = housing.corr()
 
 # Plot a scatter matrix plot
-attributes = ["median_house_value", "median_income", "total_rooms", "housing_median_age"]
-scatter_matrix(housing[attributes], figsize=(20,12))
+attributes = [
+    "median_house_value",
+    "median_income",
+    "total_rooms",
+    "housing_median_age",
+]
+scatter_matrix(housing[attributes], figsize=(20, 12))
 
 
 # Add new variables (combinations of variables)
