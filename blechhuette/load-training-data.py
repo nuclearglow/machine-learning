@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import StratifiedShuffleSplit
+from pandas.plotting import scatter_matrix
 
 HOUSING_PATH = "datasets/housing"
 
@@ -60,9 +61,9 @@ housing["income_cat"].where(housing["income_cat"] < 5, 5.0, inplace=True)
 #         If RandomState instance, random_state is the random number generator;
 #         If None, the random number generator is the RandomState instance used
 #         by `np.random`.
-splittingStrategy = StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=42)
+spitting_strategy = StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=42)
 # list according to n_splits
-for train_index, test_index in splittingStrategy.split(housing, housing["income_cat"]):
+for train_index, test_index in spitting_strategy.split(housing, housing["income_cat"]):
     strat_train_set = housing.loc[train_index]
     strat_test_set = housing.loc[test_index]
 
@@ -72,3 +73,26 @@ for s in (strat_train_set, strat_test_set):
 housing = strat_train_set.copy()
 housing.plot(kind="scatter", x="longitude", y="latitude", alpha=0.1)
 plt.show()
+
+
+
+housing.plot(kind="scatter", x="longitude", y="latitude", alpha=0.4, s=housing["population"]/100, label="population", figsize=(20,12),c="median_house_value",cmap=plt.get_cmap("jet"),colorbar=True)
+plt.legend()
+
+# Compute a correlation matrix
+corr_matrix = housing.corr()
+
+# Plot a scatter matrix plot
+attributes = ["median_house_value", "median_income", "total_rooms", "housing_median_age"]
+scatter_matrix(housing[attributes], figsize=(20,12))
+
+
+# Add new variables (combinations of variables)
+housing["rooms_per_household"] = housing["total_rooms"] / housing["households"]
+housing["bedrooms_per_rooms"] = housing["total_bedrooms"] / housing["total_rooms"]
+housing["population_per_household"] = housing["population"] / housing["households"]
+
+# Compute a correlation matrix
+corr_matrix = housing.corr()
+corr_matrix["median_house_value"].sort()
+
