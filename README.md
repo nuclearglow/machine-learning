@@ -7,6 +7,7 @@
 
 ```shell
 conda install -c conda-forge ipdb
+conda install -c conda-forge black
 ```
 
 
