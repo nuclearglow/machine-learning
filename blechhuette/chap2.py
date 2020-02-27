@@ -137,8 +137,7 @@ housing["bedrooms_per_rooms"] = housing["total_bedrooms"] / housing["total_rooms
 housing["population_per_household"] = housing["population"] / housing["households"]
 
 # Compute a correlation matrix
-corr_matrix = housing.corr()
-corr_matrix["median_house_value"].sort()
+corr_matrix["median_house_value"].sort_values()
 
 # Override housing again, this time using training set without housing value variable
 housing = strat_train_set.drop("median_house_value", axis=1)
