@@ -7,7 +7,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import StratifiedShuffleSplit
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.impute import SimpleImputer
 from pandas.plotting import scatter_matrix
+from transformers.CombinedAttributesAdder import CombinedAttributesAdder
+import itertools
+
 
 # download: https://github.com/ageron/handson-ml/blob/master/datasets/housing/housing.tgz
 DOWNLOAD_URL = "https://github.com/ageron/handson-ml/raw/master/"
@@ -132,34 +137,40 @@ attributes = [
 scatter_matrix(housing[attributes], figsize=(20, 12))
 
 # Add new variables (combinations of variables)
-housing["rooms_per_household"] = housing["total_rooms"] / housing["households"]
-housing["bedrooms_per_rooms"] = housing["total_bedrooms"] / housing["total_rooms"]
-housing["population_per_household"] = housing["population"] / housing["households"]
+# housing["rooms_per_household"] = housing["total_rooms"] / housing["households"]
+# housing["bedrooms_per_rooms"] = housing["total_bedrooms"] / housing["total_rooms"]
+# housing["population_per_household"] = housing["population"] / housing["households"]
 
 # Compute a correlation matrix
 corr_matrix["median_house_value"].sort_values()
 
-# Override housing again, this time using training set without housing value variable
-housing = strat_train_set.drop("median_house_value", axis=1)
+# data cleaning
 
-# Save housing values as labels
-housing_labels = strat_train_set["median_house_value"].copy()
+# which field has data missing?
+housing.info()  # check count of non-null values
+
+# # Override housing again, this time using training set without housing value variable
+# housing = strat_train_set.drop("median_house_value", axis=1)
+
+# # Save housing values as labels
+# housing_labels = strat_train_set["median_house_value"].copy()
 
 # Data cleaning: Remove nan values (There are missing values in the total_bedrooms variable)
-housing.dropna(
-    subset=["total_bedrooms"]
-)  # Remove dataframe entries where total_bedrooms is na
-housing.drop("total_bedrooms", axis=1)  # Remove entire total_bedrooms column
+# housing.dropna(
+#     subset=["total_bedrooms"]
+# )  # Remove dataframe entries where total_bedrooms is na
+# housing.drop("total_bedrooms", axis=1)  # Remove entire total_bedrooms column
+
+# Data cleaning: fill up missing data with median value of column
 median = housing["total_bedrooms"].median()  # Calculate median
 housing["total_bedrooms"].fillna(median, inplace=True)  # Replace na with median value
 
-# As an alternative, the Scikit-Learn class Imputer can take care of missing values
-from sklearn.impute import SimpleImputer
+housing.info()
 
 # Init
 imputer = SimpleImputer(missing_values=np.nan, strategy="median")
 
-# Get dataframe with na again
+# Data cleanup: remove data which used to train/label against later
 housing = strat_train_set.drop("median_house_value", axis=1)
 
 # Remove categorial variable, as median na replacement works only on numerical data
@@ -169,14 +180,39 @@ housing_num = housing.drop("ocean_proximity", axis=1)
 imputer.fit(housing_num)
 
 # Transform training set by replacing na (result X is numpy array)
-X = imputer.transform(housing_num)
+transformed_data = imputer.transform(housing_num)
 
-# Typecast back to DataFrame
-housing_tr = pd.DataFrame(X, columns=housing_num.columns)
+# Typecast back to DataFrame -> data has been transformed with median values for missing data points
+housing_data_complete = pd.DataFrame(transformed_data, columns=housing_num.columns)
 
 # Convert the categorial variable ocean_proximity to numerical values
 housing_cat = housing["ocean_proximity"]
-housing_cat_encoded, housing_categories = housing_cat.factorize()
+housing_cat_factorized, housing_factorize_map = housing_cat.factorize()
 
 # These numerical values, however, may be misinterpreted in terms of similarity/ adjacency
 # Solution is one-hot encoding, i.e. a binary variable (0-1) for each category
+one_hot_encoder = OneHotEncoder()
+housing_cat_factorized_reshaped = housing_cat_factorized.reshape(-1, 1)
+housing_cat_1hot = one_hot_encoder.fit_transform(housing_cat_factorized_reshaped)
+# TODO: do somethig with this!
+
+# test our own transformer CombinedAttributesAdder
+combined_attribute_adder = CombinedAttributesAdder()
+combined_attribute_transformed = combined_attribute_adder.fit_transform(
+    housing_data_complete.to_numpy()
+)
+
+housing_data_enhanced = pd.DataFrame(
+    combined_attribute_transformed,
+    columns=itertools.chain.from_iterable(
+        [
+            housing_num.columns.to_list(),
+            [
+                "rooms_per_household",
+                "population_per_household",
+                "add_bedrooms_per_room",
+            ],
+        ]
+    ),
+)
+
