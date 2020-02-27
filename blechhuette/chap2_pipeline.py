@@ -61,7 +61,6 @@ def split_testdata(data, test_ratio):
 # Load the data
 housing = load_housing_data()
 
-
 # split using sklearn
 # training_data, test_data = split_testdata(housing, 0.2), use sklearn
 # training_data, test_data = train_test_split(housing, test_size=0.2, random_state=42)
@@ -105,38 +104,38 @@ for s in (strat_train_set, strat_test_set):
     s.drop("income_cat", axis=1, inplace=True)
 
 # Override housing with training set
-housing = strat_train_set.copy()
+# housing = strat_train_set.copy()
 
 # A simple scatter plot of districts
-housing.plot(kind="scatter", x="longitude", y="latitude", alpha=0.1)
+# housing.plot(kind="scatter", x="longitude", y="latitude", alpha=0.1)
 
 # A fancier versio with district population marker-size-coded and
 # with house value color-coded
-housing.plot(
-    kind="scatter",
-    x="longitude",
-    y="latitude",
-    alpha=0.4,
-    s=housing["population"] / 100,
-    label="population",
-    figsize=(20, 12),
-    c="median_house_value",
-    cmap=plt.get_cmap("jet"),
-    colorbar=True,
-)
-plt.legend()
+# housing.plot(
+#     kind="scatter",
+#     x="longitude",
+#     y="latitude",
+#     alpha=0.4,
+#     s=housing["population"] / 100,
+#     label="population",
+#     figsize=(20, 12),
+#     c="median_house_value",
+#     cmap=plt.get_cmap("jet"),
+#     colorbar=True,
+# )
+# plt.legend()
 
 # Compute a correlation matrix
-corr_matrix = housing.corr()
+# corr_matrix = housing.corr()
 
 # Plot a scatter matrix plot
-attributes = [
-    "median_house_value",
-    "median_income",
-    "total_rooms",
-    "housing_median_age",
-]
-scatter_matrix(housing[attributes], figsize=(20, 12))
+# attributes = [
+#     "median_house_value",
+#     "median_income",
+#     "total_rooms",
+#     "housing_median_age",
+# ]
+# scatter_matrix(housing[attributes], figsize=(20, 12))
 
 # Add new variables (combinations of variables)
 # housing["rooms_per_household"] = housing["total_rooms"] / housing["households"]
@@ -144,12 +143,12 @@ scatter_matrix(housing[attributes], figsize=(20, 12))
 # housing["population_per_household"] = housing["population"] / housing["households"]
 
 # Compute a correlation matrix
-corr_matrix["median_house_value"].sort_values()
+# corr_matrix["median_house_value"].sort_values()
 
 # data cleaning
 
 # which field has data missing?
-housing.info()  # check count of non-null values
+# housing.info()  # check count of non-null values
 
 # # Override housing again, this time using training set without housing value variable
 # housing = strat_train_set.drop("median_house_value", axis=1)
@@ -164,13 +163,13 @@ housing.info()  # check count of non-null values
 # housing.drop("total_bedrooms", axis=1)  # Remove entire total_bedrooms column
 
 # Data cleaning: fill up missing data with median value of column
-median = housing["total_bedrooms"].median()  # Calculate median
-housing["total_bedrooms"].fillna(median, inplace=True)  # Replace na with median value
+# median = housing["total_bedrooms"].median()  # Calculate median
+# housing["total_bedrooms"].fillna(median, inplace=True)  # Replace na with median value
 
-housing.info()
+# housing.info()
 
 # Init
-imputer = SimpleImputer(missing_values=np.nan, strategy="median")
+# imputer = SimpleImputer(missing_values=np.nan, strategy="median")
 
 # Data cleanup: remove data which used to train/label against later
 housing = strat_train_set.drop("median_house_value", axis=1)
@@ -179,33 +178,57 @@ housing = strat_train_set.drop("median_house_value", axis=1)
 housing_num = housing.drop("ocean_proximity", axis=1)
 
 # Fit imputer
-imputer.fit(housing_num)
+# imputer.fit(housing_num)
 
 # Transform training set by replacing na (result X is numpy array)
-transformed_data = imputer.transform(housing_num)
+# transformed_data = imputer.transform(housing_num)
 
 # Typecast back to DataFrame -> data has been transformed with median values for missing data points
-housing_data_complete = pd.DataFrame(transformed_data, columns=housing_num.columns)
+# housing_data_complete = pd.DataFrame(transformed_data, columns=housing_num.columns)
 
 # Convert the categorial variable ocean_proximity to numerical values
-housing_cat = housing["ocean_proximity"]
-housing_cat_factorized, housing_factorize_map = housing_cat.factorize()
+# housing_cat = housing["ocean_proximity"]
+# housing_cat_factorized, housing_factorize_map = housing_cat.factorize()
 
 # These numerical values, however, may be misinterpreted in terms of similarity/ adjacency
 # Solution is one-hot encoding, i.e. a binary variable (0-1) for each category
-one_hot_encoder = OneHotEncoder()
-housing_cat_factorized_reshaped = housing_cat_factorized.reshape(-1, 1)
-housing_cat_1hot = one_hot_encoder.fit_transform(housing_cat_factorized_reshaped)
-# TODO: do somethig with this!
+# one_hot_encoder = OneHotEncoder()
+# housing_cat_factorized_reshaped = housing_cat_factorized.reshape(-1, 1)
+# housing_cat_1hot = one_hot_encoder.fit_transform(housing_cat_factorized_reshaped)
 
 # test our own transformer CombinedAttributesAdder
-combined_attribute_adder = CombinedAttributesAdder()
-combined_attribute_transformed = combined_attribute_adder.fit_transform(
-    housing_data_complete.to_numpy()
-)
+# combined_attribute_adder = CombinedAttributesAdder()
+# combined_attribute_transformed = combined_attribute_adder.fit_transform(
+#     housing_data_complete.to_numpy()
+# )
 
-housing_data_enhanced = pd.DataFrame(
-    combined_attribute_transformed,
+# housing_data_enhanced = pd.DataFrame(
+#     combined_attribute_transformed,
+#     columns=itertools.chain.from_iterable(
+#         [
+#             housing_num.columns.to_list(),
+#             [
+#                 "rooms_per_household",
+#                 "population_per_household",
+#                 "add_bedrooms_per_room",
+#             ],
+#         ]
+#     ),
+# )
+
+# Define our pipeline
+num_pipeline = Pipeline(
+    [
+        ("imputer", SimpleImputer(strategy="median")),
+        ("attribs_adder", CombinedAttributesAdder()),
+        ("std_scaler", StandardScaler()),
+    ]
+)
+# Run pipeline with dataset
+housing_num_transformed = num_pipeline.fit_transform(housing_num)
+
+housing_num_transformed_dataframe = pd.DataFrame(
+    housing_num_transformed,
     columns=itertools.chain.from_iterable(
         [
             housing_num.columns.to_list(),
@@ -217,4 +240,3 @@ housing_data_enhanced = pd.DataFrame(
         ]
     ),
 )
-
