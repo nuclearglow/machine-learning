@@ -111,6 +111,5 @@ housing["bedrooms_per_rooms"] = housing["total_bedrooms"] / housing["total_rooms
 housing["population_per_household"] = housing["population"] / housing["households"]
 
 # Compute a correlation matrix
-corr_matrix = housing.corr()
 corr_matrix["median_house_value"].sort()
 
