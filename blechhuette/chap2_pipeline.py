@@ -171,7 +171,7 @@ def display_scores(rmse_scores, training_score):
 
 
 print("Linear")
-display_scores(lin_reg_rmse_scores, linear_regression_mse)
+display_scores(lin_reg_rmse_scores, linear_regression_rmse)
 print("Tree")
 display_scores(tree_rmse_scores, decision_tree_rmse)
 print("Random")
