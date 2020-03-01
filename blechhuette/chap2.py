@@ -196,7 +196,6 @@ housing_cat_factorized, housing_factorize_map = housing_cat.factorize()
 one_hot_encoder = OneHotEncoder()
 housing_cat_factorized_reshaped = housing_cat_factorized.reshape(-1, 1)
 housing_cat_1hot = one_hot_encoder.fit_transform(housing_cat_factorized_reshaped)
-# TODO: do somethig with this!
 
 # test our own transformer CombinedAttributesAdder
 combined_attribute_adder = CombinedAttributesAdder()
