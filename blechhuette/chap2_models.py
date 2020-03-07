@@ -87,8 +87,13 @@ full_pipeline = FeatureUnion(
     ]
 )
 
-# test1 = category_pipeline.fit_transform(housing)
+# prepare training data
 housing_prepared = full_pipeline.fit_transform(housing)
+
+# prepare test data
+housing_test_labels = strat_test_set["median_house_value"].copy()
+housing_test = strat_test_set.drop("median_house_value", axis=1)
+housing_test_prepared = full_pipeline.transform(housing_test)
 
 # dataframe for analysis
 housing_prepared_dataframe = pd.DataFrame(
@@ -179,8 +184,12 @@ print("Random")
 display_scores(random_forest_rmse_scores, forest_tree_rmse)
 
 # export prepared data
-joblib.dump(strat_test_set, "models/housing_test_data.pkl")
-joblib.dump(strat_train_set, "models/housing_training_data.pkl")
+joblib.dump(housing_prepared, "models/housing_training_data.pkl")
+joblib.dump(housing_labels, "models/housing_labels.pkl")
+
+# export labels
+joblib.dump(housing_test_prepared, "models/housing_test_data.pkl")
+joblib.dump(housing_test_labels, "models/housing_test_labels.pkl")
 
 # export models
 joblib.dump(lin_reg, "models/housing_linear_regression.pkl")
