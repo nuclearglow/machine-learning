@@ -8,14 +8,16 @@ import matplotlib.pyplot as plt
 import util
 import joblib
 
-HOUSING_PATH = "datasets/housing"
+# load test and trainign data
+housing_test_data = joblib.load("models/housing_test_data.pkl")
+housing_training_data = joblib.load("models/housing_training_data.pkl")
 
 # Random Forest Regression
 # Available Ensemble Methods: https://scikit-learn.org/stable/modules/classes.html#module-sklearn.ensemble
 forest_reg = joblib.load("models/housing_random_forest_regression.pkl")
 
 # Cross-Validation of the Models
-# Available Model Seclectors: https://scikit-learn.org/stable/modules/classes.html#module-sklearn.model_selection
+# Available Model Selectors: https://scikit-learn.org/stable/modules/classes.html#module-sklearn.model_selection
 # Available Model Validation: https://scikit-learn.org/stable/modules/classes.html#model-validation
 # cross_val_score: https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html#sklearn.model_selection.cross_val_score
 # Documentation: https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation
@@ -35,3 +37,4 @@ def display_scores(rmse_scores, training_score):
 
 print("Random Forest Housing Model Loaded")
 display_scores(random_forest_scores, random_forest_rmse_scores)
+

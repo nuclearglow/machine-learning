@@ -178,6 +178,10 @@ display_scores(tree_rmse_scores, decision_tree_rmse)
 print("Random")
 display_scores(random_forest_rmse_scores, forest_tree_rmse)
 
+# export prepared data
+joblib.dump(strat_test_set, "models/housing_test_data.pkl")
+joblib.dump(strat_train_set, "models/housing_training_data.pkl")
+
 # export models
 joblib.dump(lin_reg, "models/housing_linear_regression.pkl")
 joblib.dump(lin_reg_scores, "models/housing_linear_regression_cross_val_scores.pkl")
