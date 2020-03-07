@@ -21,6 +21,7 @@ from sklearn.ensemble import RandomForestRegressor
 from pandas.plotting import scatter_matrix
 from transformers.CombinedAttributesAdder import CombinedAttributesAdder
 from transformers.DataFrameSelector import DataFrameSelector
+import joblib
 
 HOUSING_PATH = "datasets/housing"
 
@@ -137,7 +138,7 @@ forest_predictions = forest_reg.predict(housing_prepared)
 forest_tree_mse = mean_squared_error(housing_labels, forest_predictions)
 forest_tree_rmse = np.sqrt(forest_tree_mse)
 
-# Cross-Valiudation of the Models
+# Cross-Validation of the Models
 # Available Model Seclectors: https://scikit-learn.org/stable/modules/classes.html#module-sklearn.model_selection
 # Available Model Validation: https://scikit-learn.org/stable/modules/classes.html#model-validation
 # cross_val_score: https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html#sklearn.model_selection.cross_val_score
@@ -176,3 +177,11 @@ print("Tree")
 display_scores(tree_rmse_scores, decision_tree_rmse)
 print("Random")
 display_scores(random_forest_rmse_scores, forest_tree_rmse)
+
+# export models
+joblib.dump(lin_reg, "models/housing_linear_regression.pkl")
+joblib.dump(lin_reg_scores, "models/housing_linear_regression_cross_val_scores.pkl")
+joblib.dump(forest_reg, "models/housing_random_forest_regression.pkl")
+joblib.dump(
+    random_forest_scores, "models/housing_random_forest_regression_cross_val_scores.pkl"
+)

@@ -1,2 +1,5 @@
 .vscode/.ropeproject
 __pycache__
+
+# generated models
+models/
