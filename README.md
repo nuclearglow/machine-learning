@@ -10,6 +10,22 @@ conda install -c conda-forge ipdb
 conda install -c conda-forge black
 ```
 
+## project/ structure
+
+data/
+    * contains the data sources to be worked on
+models/
+    * contains models and other exported, loadable data (joblift pkl)
+pipeline/
+    * transformers/ - contains pipeline transfomers
+    * pipeline.py - contains all pipelines, uses transformers
+
+/ - the root project contains scripts
+    01_get_data.py - download / procure data and save to data/
+    02_data_visualization.py - scriupts to look at data (spyder)
+    03_data_preparation.py - prepare data for modeling
+    04_modeling.py - build models and optimize
+
 
 
 # Tools

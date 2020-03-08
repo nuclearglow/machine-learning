@@ -34,7 +34,7 @@ def load_housing_data(housing_path=HOUSING_PATH):
 
 # Load the data
 housing = load_housing_data()
-
+ma
 # median income has been crippled, categorize by dividing by 1.5, then make them discrete by joining all above 5 to category 5
 housing["income_cat"] = np.ceil(housing["median_income"] / 1.5)
 housing["income_cat"].where(housing["income_cat"] < 5, 5.0, inplace=True)
