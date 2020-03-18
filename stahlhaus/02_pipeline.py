@@ -1,12 +1,19 @@
 #!/usr/bin/env python
-from sklearn.pipeline import Pipeline
+import joblib
+
+from scipy.stats import uniform
+
 from sklearn.impute import SimpleImputer
+from sklearn.pipeline import Pipeline
+from sklearn.pipeline import Pipeline, FeatureUnion
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.ensemble import RandomForestRegressor
+
 from transformers.DataFrameToNumpyTransformer import DataFrameToNumpyTransformer
 from transformers.AttributeSelector import AttributeSelector
 from transformers.LabelSelector import LabelSelector
-from sklearn.pipeline import Pipeline, FeatureUnion
-import joblib
+from transformers.RandomizedSearchModelFit import RandomizedSearchModelFit
+
 
 # select the relevant numeric attributes
 numeric_attributes = [
@@ -79,4 +86,25 @@ training_data_labels = label_pipeline.fit_transform(training_data_raw)
 test_data_labels = label_pipeline.fit_transform(test_data_raw)
 
 # TODO
-# model_training_pipeline = Pipeline([])
+model_training_pipeline = Pipeline(
+    [
+        (
+            "FitModel",
+            RandomizedSearchModelFit(
+                RandomForestRegressor(),
+                {
+                    "n_estimators": list(range(1, 31, 1)),
+                    "max_features": list(range(1, 11, 1)),
+                },
+                n_iter=30,
+            ),
+        ),
+    ]
+)
+
+
+# full_pipeline = Pipeline(
+#     [("preprocess", preprocessing_pipeline), ("model_fit", model_training_pipeline)]
+# )
+
+# full_pipeline.fit(training_data, training_data_labels)
