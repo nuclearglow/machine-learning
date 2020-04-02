@@ -89,7 +89,7 @@ xmax = integer_randnums.max()
 xminloc = integer_randnums.argmin()
 xmaxloc = integer_randnums.argmax()
 
-# Dimensions / shape of array
+# Dimensions / shape of array as tuple
 array_shape = integer_randnums.shape
 
 # Datatype of array
@@ -134,4 +134,3 @@ b = a + 5
 b = a * a
 b = a ** 2
 b = np.sqrt(a)
-
