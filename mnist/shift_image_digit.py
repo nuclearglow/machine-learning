@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import cProfile
 import joblib
 import matplotlib
 import numpy as np
@@ -37,6 +38,9 @@ def shift_image(image_data, direction, distance):
 training_data = joblib.load("data/mnist_training_data.pkl")
 training_labels = joblib.load("data/mnist_training_labels.pkl")
 
+cp = cProfile.Profile()
+cp.enable()
+
 # jedes bild
 # erzeugen 4 kopien
 # pushen wir in ein array
@@ -50,3 +54,6 @@ for i, image in enumerate(training_data):
 #     display_image(augmentation_data[i, :])
 
 augmented_data = np.r_[training_data, augmentation_data]
+
+cp.disable()
+cp.print_stats()
