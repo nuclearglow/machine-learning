@@ -12,6 +12,7 @@ import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
 
+
 training_data = joblib.load("data/mnist_training_data.pkl")
 training_labels = joblib.load("data/mnist_training_labels.pkl")
 
