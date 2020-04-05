@@ -25,13 +25,16 @@ training_labels = np.array(training_labels, dtype=np.float64)
 # use SGDClassifier
 sgd_clf = SGDClassifier(random_state=42)
 sgd_clf.fit(training_data, training_labels)
+
 # test
 test_score = sgd_clf.decision_function([training_data[2, :]])
 classes = sgd_clf.classes_
 detected_class = sgd_clf.classes_[test_score.argmax()]
+
 # scale the data
 scaler = StandardScaler()
 training_data_scaled = scaler.fit_transform(training_data)
+
 # cross validation
 sgd_cross_validation_score = cross_val_score(
     sgd_clf, training_data_scaled, training_labels, cv=3, scoring="accuracy"
@@ -54,8 +57,10 @@ plt.show()
 # altermative classifier: use random forest classifier
 forest_clf = RandomForestClassifier(random_state=42)
 forest_clf.fit(training_data, training_labels)
+
 # test
 forest_probability_scores = forest_clf.predict_proba([training_data[0, :]])
+
 # Cross validation
 forest_cross_validation_score = cross_val_score(
     forest_clf, training_data, training_labels, cv=3, scoring="accuracy"
