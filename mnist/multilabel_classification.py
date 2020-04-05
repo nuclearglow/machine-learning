@@ -1,3 +1,4 @@
+import cProfile
 import joblib
 import numpy as np
 from sklearn.neighbors import KNeighborsClassifier
@@ -9,6 +10,9 @@ training_labels = joblib.load("data/mnist_training_labels.pkl")
 
 test_data = joblib.load("data/mnist_test_data.pkl")
 test_labels = joblib.load("data/mnist_test_labels.pkl")
+
+cp = cProfile.Profile()
+cp.enable()
 
 training_labels = np.array(training_labels, dtype=np.float64)
 
@@ -30,3 +34,6 @@ knn_prediction = cross_val_predict(knn_clf, training_data, training_labels_multi
 knn_f1_score = f1_score(
     training_labels_multi, knn_prediction, average="macro"
 )  # https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html
+
+cp.disable()
+cp.print_stats()
