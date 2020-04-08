@@ -1,0 +1,87 @@
+import os
+import pandas as pd
+import math
+import joblib
+from sklearn.pipeline import Pipeline, FeatureUnion
+from sklearn.preprocessing import OneHotEncoder, LabelBinarizer
+from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import StandardScaler
+from transformers.DataFrameSelector import DataFrameSelector
+
+
+## load data
+train_csv = os.path.join("data", "train.csv")
+training_data = pd.read_csv(train_csv)
+
+test_csv = os.path.join("data", "test.csv")
+test_data = pd.read_csv(test_csv)
+
+# preprocessing
+
+# check for missing data in label -> none
+# training_data["Survived"].isna()
+# invalid_training_labels = training_data[training_data["Survived"].isna()]
+
+numeric_attributes = ["Pclass", "Age", "SibSp", "Parch", "Fare"]
+category_attributes = ["Pclass", "Embarked"]
+binary_attributes = ["Sex", "Cabin"]
+
+# TODO: move to pipeline, own transformer DataMapper
+# prepare Sex category
+training_data["Sex"] = training_data["Sex"].map({"male": 0, "female": 1})
+test_data["Sex"] = test_data["Sex"].map({"male": 0, "female": 1})
+# prepare Cabin data (String or NaN)
+training_data["Cabin"] = training_data["Cabin"].map(
+    lambda cabin: 1 if isinstance(cabin, str) else 0
+)
+test_data["Cabin"] = test_data["Cabin"].map(
+    lambda cabin: 1 if isinstance(cabin, str) else 0
+)
+
+category_binarize_pipeline = Pipeline(
+    ("selector", DataFrameSelector(binary_attributes)),
+    ("label_binarizer", LabelBinarizer()),
+)
+
+category_onehot_pipeline = Pipeline(
+    ("selector", DataFrameSelector(category_attributes)),
+    ("one_hot_encode", OneHotEncoder(sparse=False)),
+)
+
+category_pipeline = FeatureUnion(
+    transformer_list=[
+        ("binarize", category_binarize_pipeline),
+        ("one_hot_encode", category_onehot_pipeline),
+    ]
+)
+
+numeric_pipeline = Pipeline(
+    [
+        ("selector", DataFrameSelector(numeric_attributes)),
+        ("imputer", SimpleImputer(strategy="median")),
+        ("std_scaler", StandardScaler()),
+    ]
+)
+
+preprocessing_pipeline = FeatureUnion(
+    transformer_list=[
+        ("numeric_pipeline", numeric_pipeline),
+        ("category_pipeline", category_pipeline),
+    ]
+)
+
+# extract labels
+training_labels = training_data["Survived"].to_numpy()
+test_labels = test_data["Survived"].to_numpy()
+
+# transform the date
+titanic_training_data_preprocessed = preprocessing_pipeline.fit_transform(training_data)
+titanic_test_data_preprocessed = preprocessing_pipeline.fit_transform(test_data)
+
+# joblib dump
+joblib.dump(
+    titanic_training_data_preprocessed, "data/titanic_training_data_preprocessed.pkl"
+)
+joblib.dump(training_labels, "data/titanic_training_labels.pkl")
+joblib.dump(titanic_test_data_preprocessed, "data/titanic_test_data_preprocessed.pkl")
+joblib.dump(test_labels, "data/titanic_test_labels.pkl")
