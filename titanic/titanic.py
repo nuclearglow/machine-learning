@@ -39,19 +39,14 @@ test_data["Cabin"] = test_data["Cabin"].map(
 )
 
 category_binarize_pipeline = Pipeline(
-    ("selector", DataFrameSelector(binary_attributes)),
-    ("label_binarizer", LabelBinarizer()),
+    [("selector", DataFrameSelector(binary_attributes)),]
 )
 
 category_onehot_pipeline = Pipeline(
-    ("selector", DataFrameSelector(category_attributes)),
-    ("one_hot_encode", OneHotEncoder(sparse=False)),
-)
-
-category_pipeline = FeatureUnion(
-    transformer_list=[
-        ("binarize", category_binarize_pipeline),
-        ("one_hot_encode", category_onehot_pipeline),
+    [
+        ("selector", DataFrameSelector(category_attributes)),
+        ("imputer", SimpleImputer(strategy="most_frequent")),
+        ("one_hot_encode", OneHotEncoder(sparse=False)),
     ]
 )
 
@@ -66,22 +61,23 @@ numeric_pipeline = Pipeline(
 preprocessing_pipeline = FeatureUnion(
     transformer_list=[
         ("numeric_pipeline", numeric_pipeline),
-        ("category_pipeline", category_pipeline),
+        ("binarize", category_binarize_pipeline),
+        ("one_hot_encode", category_onehot_pipeline),
     ]
 )
 
 # extract labels
 training_labels = training_data["Survived"].to_numpy()
-test_labels = test_data["Survived"].to_numpy()
+# test_labels = test_data["Survived"].to_numpy()
 
 # transform the date
 titanic_training_data_preprocessed = preprocessing_pipeline.fit_transform(training_data)
-titanic_test_data_preprocessed = preprocessing_pipeline.fit_transform(test_data)
+# titanic_test_data_preprocessed = preprocessing_pipeline.fit_transform(test_data)
 
 # joblib dump
 joblib.dump(
     titanic_training_data_preprocessed, "data/titanic_training_data_preprocessed.pkl"
 )
 joblib.dump(training_labels, "data/titanic_training_labels.pkl")
-joblib.dump(titanic_test_data_preprocessed, "data/titanic_test_data_preprocessed.pkl")
-joblib.dump(test_labels, "data/titanic_test_labels.pkl")
+# joblib.dump(titanic_test_data_preprocessed, "data/titanic_test_data_preprocessed.pkl")
+# joblib.dump(test_labels, "data/titanic_test_labels.pkl")
