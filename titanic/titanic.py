@@ -8,6 +8,8 @@ from sklearn.pipeline import Pipeline, FeatureUnion
 from sklearn.preprocessing import OneHotEncoder, LabelBinarizer
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import cross_val_score, cross_val_predict
+from sklearn.linear_model import SGDClassifier
 
 from transformers.DataFrameSelector import DataFrameSelector
 
@@ -84,3 +86,21 @@ joblib.dump(
 joblib.dump(training_labels, "data/titanic_training_labels.pkl")
 # joblib.dump(titanic_test_data_preprocessed, "data/titanic_test_data_preprocessed.pkl")
 # joblib.dump(test_labels, "data/titanic_test_labels.pkl")
+
+sgd_clf = SGDClassifier(random_state=42)
+
+sgd_cross_validation = cross_val_score(
+    sgd_clf,
+    titanic_training_data_preprocessed,
+    training_labels,
+    cv=3,
+    scoring="accuracy",
+)
+
+decision_scores = cross_val_predict(
+    sgd_clf,
+    titanic_training_data_preprocessed,
+    training_labels,
+    cv=3,
+    method="decision_function",
+)
