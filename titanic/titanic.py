@@ -1,18 +1,27 @@
 #!/usr/bin/env python
 import os
 import pandas as pd
+import numpy as np
 import math
 import joblib
+
+import matplotlib
+import matplotlib.pyplot as plt
 
 from sklearn.pipeline import Pipeline, FeatureUnion
 from sklearn.preprocessing import OneHotEncoder, LabelBinarizer
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import cross_val_score, cross_val_predict
+from sklearn.model_selection import cross_val_score, cross_val_predict, cross_validate
 from sklearn.linear_model import SGDClassifier
+from sklearn.ensemble import RandomForestClassifier
 
 from transformers.DataFrameSelector import DataFrameSelector
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score
+from sklearn.metrics import precision_recall_curve
+from sklearn.metrics import roc_curve, roc_auc_score
 
+from util import evaluate_classifier_model
 
 ## load data
 train_csv = os.path.join("data", "train.csv")
@@ -87,7 +96,17 @@ joblib.dump(training_labels, "data/titanic_training_labels.pkl")
 # joblib.dump(titanic_test_data_preprocessed, "data/titanic_test_data_preprocessed.pkl")
 # joblib.dump(test_labels, "data/titanic_test_labels.pkl")
 
+# SGDClassifier
+
 sgd_clf = SGDClassifier(random_state=42)
+
+sgd_validate = cross_validate(
+    sgd_clf,
+    titanic_training_data_preprocessed,
+    training_labels,
+    cv=3,
+    scoring="accuracy",
+)
 
 sgd_cross_validation = cross_val_score(
     sgd_clf,
@@ -104,3 +123,23 @@ decision_scores = cross_val_predict(
     cv=3,
     method="decision_function",
 )
+
+sgd_evaluation = evaluate_classifier_model(decision_scores, training_labels)
+
+# Random Forest
+
+random_forest_clf = RandomForestClassifier(random_state=42)
+
+sgd_cross_validation = cross_val_score(
+    random_forest_clf,
+    titanic_training_data_preprocessed,
+    training_labels,
+    cv=3,
+    scoring="accuracy",
+)
+
+decision_scores = cross_val_predict(
+    random_forest_clf, titanic_training_data_preprocessed, training_labels, cv=3
+)
+
+random_forest_evaluation = evaluate_classifier_model(decision_scores, training_labels)
