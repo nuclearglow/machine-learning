@@ -7,6 +7,9 @@ import matplotlib.pyplot as plt
 
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+from sklearn.model_selection import train_test_split
+from sklearn.pipeline import Pipeline
 
 from scipy.interpolate import interp1d
 
@@ -22,15 +25,16 @@ y = 0.5 * X ** 2 + X + 2 + np.random.rand(m, 1)
 plt.scatter(X, y, c="#AA00AA")
 plt.show()
 
-# data augmentation by polynomial degree
-poly_features = PolynomialFeatures(degree=25, include_bias=False)
-
-X_poly = poly_features.fit_transform(X)
+polynomial_regression = Pipeline(
+    [
+        ("poly_features", PolynomialFeatures(degree=10, include_bias=False)),
+        ("lin_reg", LinearRegression()),
+    ]
+)
 
 # now the augmented dataset with the polynomial expansion (**2) can be fitted
-lin_reg = LinearRegression()
-lin_reg.fit(X_poly, y)
-y_hat = lin_reg.predict(X_poly)
+lin_reg = polynomial_regression.fit(X, y)
+y_hat = lin_reg.predict(X)
 
 # Interpolate values
 n_data_points = 500
@@ -44,6 +48,24 @@ plt.scatter(X, y, c="#00AAAA")
 plt.scatter(X, y_hat, c="#FFFF55")
 plt.axis([-3, 3, 0, 10])
 plt.show()
+
+
+def plot_learning_curves(model, X, y):
+    X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2)
+    train_errors, val_errors = [], []
+    for m in range(1, len(X_train)):
+        model.fit(X_train[:m], y_train[:m])
+        y_train_predict = model.predict(X_train[:m])
+        y_val_predict = model.predict(X_val)
+        train_errors.append(mean_squared_error(y_train_predict, y_train[:m]))
+        val_errors.append(mean_squared_error(y_val_predict, y_val))
+
+    plt.plot(np.sqrt(train_errors), "r-+", linewidth=2, label="trainining data")
+    plt.plot(np.sqrt(val_errors), "b-", linewidth=3, label="validation")
+    plt.axis([0, 80, 0, 3])
+
+
+plot_learning_curves(polynomial_regression, X, y)
 
 # y = 4 + 3 * X + np.random.randn(100, 1)
 
