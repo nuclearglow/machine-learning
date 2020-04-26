@@ -4,6 +4,7 @@
 import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
+import multiprocessing
 
 from scipy.interpolate import interp1d
 
@@ -11,6 +12,8 @@ from sklearn.preprocessing import PolynomialFeatures, StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.linear_model import Ridge, SGDRegressor
+
+from util import plot_learning_curve
 
 
 # training_data
@@ -49,6 +52,17 @@ plt.scatter(X, ridge_y_hat, c="#FFFF55")
 plt.axis([-3, 3, 0, 10])
 plt.show()
 
+# Plot learning curve
+plot_learning_curve(
+    ridge_regression,
+    X,
+    y,
+    train_sizes=np.linspace(0.1, 1, 30),
+    cv=5,
+    n_jobs=multiprocessing.cpu_count() - 2,
+    scoring="explained_variance",
+)
+
 # Ridge regression using SGDregression
 sgd_regression_l2 = Pipeline(
     [
@@ -78,3 +92,14 @@ plt.scatter(X, y, c="#00AAAA")
 plt.scatter(X, sgd_y_hat, c="#FFFF55")
 # plt.axis([-3, 3, 0, 10])
 plt.show()
+
+# Plot learning curve
+plot_learning_curve(
+    sgd_regression_l2,
+    X,
+    y,
+    train_sizes=np.linspace(0.1, 1, 30),
+    cv=5,
+    n_jobs=multiprocessing.cpu_count() - 2,
+    scoring="explained_variance",
+)

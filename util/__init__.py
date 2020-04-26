@@ -154,18 +154,24 @@ def plot_learning_curve(
         train_scores_mean - train_scores_std,
         train_scores_mean + train_scores_std,
         alpha=0.1,
-        color="r",
+        color="#00AAAA",
     )
     plt.fill_between(
         train_sizes,
         test_scores_mean - test_scores_std,
         test_scores_mean + test_scores_std,
         alpha=0.1,
-        color="g",
+        color="#AA00AA",
     )
-    plt.plot(train_sizes, train_scores_mean, "o-", color="r", label="Training score")
     plt.plot(
-        train_sizes, test_scores_mean, "o-", color="g", label="Cross-validation score"
+        train_sizes, train_scores_mean, "o-", color="#00AAAA", label="Training score"
+    )
+    plt.plot(
+        train_sizes,
+        test_scores_mean,
+        "o-",
+        color="#AA00AA",
+        label="Cross-validation score",
     )
 
     # plt.axis([0, 80, 0, 3])
