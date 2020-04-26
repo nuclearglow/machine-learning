@@ -57,7 +57,7 @@ sgd_regression_l2 = Pipeline(
         (
             "sgd_regression_l2",
             SGDRegressor(
-                max_iter=1000, alpha=1, penalty="l2", eta0=0.1, random_state=42
+                max_iter=1000, alpha=1e-5, penalty="l2", eta0=0.1, random_state=42
             ),
         ),
     ]
