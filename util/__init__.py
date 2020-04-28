@@ -75,6 +75,7 @@ def plot_learning_curve(
     n_jobs=multiprocessing.cpu_count() - 1,
     train_sizes=np.linspace(0.1, 1.0, 5),
     scoring=None,
+    title="Learning Curve",
 ):
     """
     Generate a simple plot of the test and training learning curve.
@@ -136,7 +137,7 @@ def plot_learning_curve(
     # https://devdocs.io/scikit_learn/auto_examples/model_selection/plot_learning_curve#sphx-glr-auto-examples-model-selection-plot-learning-curve-py
 
     plt.figure()
-    plt.title("Learning Curve")
+    plt.title(title)
     plt.xlabel("Training examples")
     plt.ylabel("Score")
 
