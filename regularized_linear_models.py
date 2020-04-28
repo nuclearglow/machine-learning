@@ -12,6 +12,8 @@ from sklearn.preprocessing import PolynomialFeatures, StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.linear_model import Ridge, SGDRegressor, Lasso, ElasticNet
+from sklearn.base import clone
+from sklearn.metrics import mean_squared_error
 
 from util import plot_learning_curve
 
@@ -228,3 +230,54 @@ plot_learning_curve(
     scoring="explained_variance",
     title="Elastic Net regression learning curve",
 )
+
+# Early stopping regularization of Regression
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+poly_scaler_pipeline = Pipeline(
+    [
+        ("poly_features", PolynomialFeatures(degree=3, include_bias=False)),
+        ("scaler", StandardScaler()),
+    ]
+)
+
+X_train_poly_scaled = poly_scaler_pipeline.fit_transform(X_train)
+X_test_poly_scaled = poly_scaler_pipeline.fit_transform(X_test)
+
+sgd_regressor = SGDRegressor(
+    max_iter=1,
+    warm_start=True,
+    penalty=None,
+    learning_rate="constant",
+    eta0=0.0005,
+    early_stopping=False,
+)
+
+minimum_mse = float("inf")
+best_epoch = None
+best_model = None
+
+for epoch in range(1000):
+    sgd_regressor.fit(X_train_poly_scaled, y_train)
+    y_hat_test = sgd_regressor.predict(X_test_poly_scaled)
+    y_test_mse = mean_squared_error(y_hat_test, y_test)
+
+    if y_test_mse < minimum_mse:
+        minimum_mse = y_test_mse
+        best_epoch = epoch
+        best_model = clone(sgd_regressor)
+
+# directly use in sklearn
+sgd_regressor_early_stop = SGDRegressor(
+    max_iter=1000,
+    warm_start=True,
+    penalty=None,
+    learning_rate="constant",
+    eta0=0.0005,
+    early_stopping=True,
+    tol=1e-3,
+    n_iter_no_change=5,
+    verbose=1000,
+)
+sgd_regressor_early_stop.fit(X_train_poly_scaled, y_train)
