@@ -105,7 +105,7 @@ plt.show()
 X_data = iris_data["data"]
 
 # Select features for the model
-feats = [2, 3]
+feats = [0, 1, 2, 3]
 X_softmax = X_data[:, feats]
 
 # 0,1,2 = Iris-Setosa, Iris-Versicolour, Iris-Virginica
@@ -119,6 +119,7 @@ log_reg_softmax.fit(X_softmax, y_softmax)
 
 softmax_prediction = log_reg_softmax.predict(X_softmax)
 softmax_proba = log_reg_softmax.predict_proba(X_softmax)
+softmax_score = log_reg_softmax.score(X_softmax, y_softmax)
 
 # Dictionaries for features and classes
 classes = {0: "Iris-Setosa", 1: "Iris-Versicolour", 2: "Iris-Virginica"}
