@@ -56,10 +56,6 @@ petal_width = X2[:, 1]
 petal_length = X2[:, 0]
 
 
-# color_vector = y2
-# color_vector[(color_vector == 0)] = "g"
-# color_vector[(color_vector == 0)] = "r"
-
 # Plot true positives
 plt.scatter(
     petal_length[(y2_prediction == 1) & (y2 == 1)],
@@ -101,4 +97,57 @@ plt.xlim((0, 7))
 # plt.legend()
 plt.title("2 features")
 plt.legend()
+plt.show()
+
+# Softmax Regression
+
+# Get petal width and length
+X_data = iris_data["data"]
+
+# Select features for the model
+feats = [2, 3]
+X_softmax = X_data[:, feats]
+
+# 0,1,2 = Iris-Setosa, Iris-Versicolour, Iris-Virginica
+y_softmax = iris_data["target"]
+
+# Initialize logistic regression model
+log_reg_softmax = LogisticRegression(multi_class="multinomial", solver="lbfgs", C=0.99)
+
+# Fit petal widths and
+log_reg_softmax.fit(X_softmax, y_softmax)
+
+softmax_prediction = log_reg_softmax.predict(X_softmax)
+softmax_proba = log_reg_softmax.predict_proba(X_softmax)
+
+# Dictionaries for features and classes
+classes = {0: "Iris-Setosa", 1: "Iris-Versicolour", 2: "Iris-Virginica"}
+features = {0: "Sepal length", 1: "Sepal width", 2: "Petal length", 3: "Petal width"}
+symbols = ["o", "^", "*"]
+
+feature1 = X_data[:, feats[0]]
+feature2 = X_data[:, feats[1]]
+
+for i, (k, plant) in enumerate(classes.items()):
+    plt.scatter(
+        feature1[(softmax_prediction == k) & (y_softmax == k)],
+        feature2[(softmax_prediction == k) & (y_softmax == k)],
+        c="green",
+        marker=symbols[i],
+        label=f"{plant} correct",
+    )
+    plt.scatter(
+        feature1[(softmax_prediction == k) & (y_softmax != k)],
+        feature2[(softmax_prediction == k) & (y_softmax != k)],
+        c="red",
+        marker=symbols[i],
+        label=f"{plant} false",
+    )
+
+plt.ylabel(str(features[feats[1]]))
+plt.xlabel(str(features[feats[0]]))
+plt.legend()
+plt.title("Iris softmax classification")
+plt.xlim((0, feature1.max() * 1.1))
+plt.ylim((0, feature2.max() * 1.1))
 plt.show()
