@@ -94,7 +94,12 @@ predictions = grid_search_best_model.predict_proba(pixels)[:, 0].reshape(
 )
 
 # plt.contour(x_ax_vals, y_ax_vals, pixels, 50, linewidths=0.5, colors='k')
-plt.contourf(x_ax_vals, y_ax_vals, predictions, 255, cmap=plt.cm.jet, vmin=0, vmax=1)
+# detect dpi https://www.infobyip.com/detectmonitordpi.php
+my_dpi = 96
+plt.figure(figsize=(800 / my_dpi, 800 / my_dpi), dpi=my_dpi)
+plt.contourf(
+    x_ax_vals, y_ax_vals, predictions, 255, cmap=plt.cm.twilight_shifted, vmin=0, vmax=1
+)
 plt.colorbar()
 plt.show()
 
