@@ -98,7 +98,7 @@ predictions = grid_search_best_model.predict_proba(pixels)[:, 0].reshape(
 my_dpi = 96
 plt.figure(figsize=(800 / my_dpi, 800 / my_dpi), dpi=my_dpi)
 plt.contourf(
-    x_ax_vals, y_ax_vals, predictions, 255, cmap=plt.cm.twilight_shifted, vmin=0, vmax=1
+    x_ax_vals, y_ax_vals, predictions, 255, cmap=plt.cm.hsv, vmin=0, vmax=1
 )
 plt.colorbar()
 plt.show()
