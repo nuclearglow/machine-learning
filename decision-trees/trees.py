@@ -14,7 +14,7 @@ x = np.flip(x, 1)
 y = iris.target
 
 # Initialize and fit a decision Tree clssifier
-depth = 3
+depth = None
 tree_clf = DecisionTreeClassifier(max_depth=depth, criterion="entropy")
 tree_clf.fit(x, y)
 
