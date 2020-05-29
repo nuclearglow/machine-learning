@@ -24,7 +24,8 @@ bag_clf = BaggingClassifier(
     DecisionTreeClassifier(),
     n_estimators=500,
     max_samples=100,
-    bootstrap=False,  # True = bagging, False = pasting
+    bootstrap=True,  # True = bagging, False = pasting
+    oob_score=True,  # only for bagging
     n_jobs=multiprocessing.cpu_count() - 2,
 )
 
