@@ -3,15 +3,16 @@
 
 import multiprocessing
 import numpy as np
+
 import matplotlib
 import matplotlib.pyplot as plt
+
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.datasets import make_moons
 from sklearn.ensemble import BaggingClassifier, RandomForestClassifier
 from mlxtend.plotting import plot_decision_regions
 from sklearn.metrics import accuracy_score
-
 from sklearn.svm import SVC
 
 # Make some mooooons
