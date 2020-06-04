@@ -11,6 +11,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.datasets import load_iris
 from sklearn.ensemble import RandomForestClassifier
 
+from colors import cga_basic
+
 # Train random forest on iris
 iris = load_iris()
 iris_random_forest_clf = RandomForestClassifier(
@@ -46,12 +48,12 @@ ax = fig.add_axes([0, 0, 1, 1])
 ax.set_title(f"MNIST Pixel Importance")
 cf = ax.imshow(
     feature_importance_pixels,
-    cmap=plt.cm.hot,
+    cmap=cga_basic,
     vmin=0,
     vmax=feature_importance_pixels.max(),
 )
 fig.colorbar(
     cf,
-    boundaries=np.linspace(0, feature_importance_pixels.max(), 255),
+    boundaries=np.linspace(0, feature_importance_pixels.max(), 256),
     orientation="vertical",
 )
