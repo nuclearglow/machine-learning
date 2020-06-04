@@ -83,7 +83,7 @@ cga_palette1_colorlist = np.array(
         [170 / 255, 0, 170 / 255],  # dark magenta
     ]
 )
-cga_basic = get_colormap(cga_palette1_colorlist, turning_points, 32)
+cga_basic = get_colormap(cga_palette1_colorlist, turning_points, 16)
 
 
 cga_high_colors = (
