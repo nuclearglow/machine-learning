@@ -23,7 +23,6 @@ def get_colormap(colors, turning_points, resolution):
 
     for i, (s, e) in enumerate(sliding_window(turning_points)):
         start, end = int(s), int(e)
-        print(i, start, end)
 
         start_offset = 0
         index_offset = 0
@@ -79,10 +78,12 @@ cga_p1_light = get_colormap(
         [170 / 255, 0, 170 / 255],  # dark magenta
     ],
     [0, 0.25, 0.5, 0.75, 1],
-    16)
+    16,
+)
 
 # Palette 1 white
-cga_p1_white = get_colormap([
+cga_p1_white = get_colormap(
+    [
         [0, 170 / 255, 170 / 255],  # dark cyan
         [85 / 255, 1, 1],  # light cyan
         [1, 1, 1],  # white
@@ -90,8 +91,8 @@ cga_p1_white = get_colormap([
         [170 / 255, 0, 170 / 255],  # dark magenta
     ],
     [0, 0.25, 0.5, 0.75, 1],
-    16)
-
+    16,
+)
 
 
 # Palette 1 dark
@@ -147,17 +148,12 @@ colorlist = np.array(
 cga_p3_dark = get_colormap(colorlist, turning_points, 16)
 
 # Tester
-def test_cga(cgamap, plotdatfile='testplot.csv'):
+def test_cga(cgamap, plotdatfile="testplot.csv"):
     pd = np.flipud(np.loadtxt(open("testplot.csv", "rb"), delimiter=","))
     fig = plt.figure()
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set_title(f"CGA test")
-    cf = ax.imshow(
-        pd,
-        cmap=cgamap,
-        vmin=-np.abs(pd).max(),
-        vmax=np.abs(pd).max(),
-    )
+    cf = ax.imshow(pd, cmap=cgamap, vmin=-np.abs(pd).max(), vmax=np.abs(pd).max(),)
     fig.colorbar(
         cf,
         boundaries=np.linspace(-np.abs(pd).max(), np.abs(pd).max(), 256),

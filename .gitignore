@@ -7,3 +7,4 @@ models/
 # mnist data
 mnist/data
 ensemble/data
+gaindecode/data
