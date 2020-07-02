@@ -72,11 +72,18 @@ voting_clf.fit(X_train, y_train)
 voting_clf_prediction = voting_clf.predict(X_validate)
 accuracy_voting = accuracy_score(y_validate, voting_clf_prediction, normalize=True)
 
+svm_prediction = svm_clf.predict(X_validate)
 # a new training set from the prediction of the 3 predictors
 X_combined_predictions = np.c_[
-    np.array(random_forest_prediction),
-    np.array(extra_tree_prediction),
-    np.array(svm_prediction),
+    np.array(forest_clf.predict(X_validate)),
+    np.array(extra_tree_clf.predict(X_validate)),
+    np.array(svm_clf.predict(X_validate)),
+]
+
+X_test_combined_predictions = np.c_[
+    np.array(forest_clf.predict(X_test)),
+    np.array(extra_tree_clf.predict(X_test)),
+    np.array(svm_clf.predict(X_test)),
 ]
 
 random_forest_blender = RandomForestClassifier(
@@ -84,10 +91,10 @@ random_forest_blender = RandomForestClassifier(
     random_state=42,
     max_depth=None,
     oob_score=True,
-    n_jobs=multiprocessing.cpu_count(),
+    n_jobs=multiprocessing.cpu_count()-1,
 )
-random_forest_blender.fit(X_combined_predictions, y_train)
-random_forest_blender_prediction = random_forest_blender.predict(X_validate)
+random_forest_blender.fit(X_combined_predictions, y_validate)
+random_forest_blender_prediction = random_forest_blender.predict(X_test_combined_predictions)
 
 accuracy_blender = accuracy_score(
     y_validate, random_forest_blender_prediction, normalize=True
@@ -106,5 +113,5 @@ final_voting_accuracy = accuracy_score(
     y_test, voting_clf.predict(X_test), normalize=True
 )
 final_rand_blender_accuracy = accuracy_score(
-    y_test, random_forest_blender.predict(X_test), normalize=True
+    y_test, random_forest_blender_prediction, normalize=True
 )
