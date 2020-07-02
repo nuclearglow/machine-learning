@@ -3,6 +3,7 @@
 
 import joblib
 import multiprocessing
+import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier
 from sklearn.metrics import accuracy_score
@@ -27,10 +28,10 @@ X_test, X_validate, y_test, y_validate = train_test_split(
 
 # Random Forest
 forest_clf = RandomForestClassifier(
-    n_estimators=500,
+    n_estimators=100,
     random_state=42,
     max_depth=None,
-    n_jobs=multiprocessing.cpu_count() - 2,
+    n_jobs=multiprocessing.cpu_count(),
 )
 forest_clf.fit(X_train, y_train)
 
@@ -40,10 +41,10 @@ accuracy_random_forest = accuracy_score(
 )
 
 extra_tree_clf = ExtraTreesClassifier(
-    n_estimators=500,
+    n_estimators=100,
     random_state=42,
     max_depth=None,
-    n_jobs=multiprocessing.cpu_count() - 2,
+    n_jobs=multiprocessing.cpu_count(),
 )
 extra_tree_clf.fit(X_train, y_train)
 
@@ -71,3 +72,39 @@ voting_clf.fit(X_train, y_train)
 voting_clf_prediction = voting_clf.predict(X_validate)
 accuracy_voting = accuracy_score(y_validate, voting_clf_prediction, normalize=True)
 
+# a new training set from the prediction of the 3 predictors
+X_combined_predictions = np.c_[
+    np.array(random_forest_prediction),
+    np.array(extra_tree_prediction),
+    np.array(svm_prediction),
+]
+
+random_forest_blender = RandomForestClassifier(
+    n_estimators=100,
+    random_state=42,
+    max_depth=None,
+    oob_score=True,
+    n_jobs=multiprocessing.cpu_count(),
+)
+random_forest_blender.fit(X_combined_predictions, y_train)
+random_forest_blender_prediction = random_forest_blender.predict(X_validate)
+
+accuracy_blender = accuracy_score(
+    y_validate, random_forest_blender_prediction, normalize=True
+)
+accuracy_blender_oob = random_forest_blender.oob_score_
+
+# testdatensatz durchhecheln
+final_random_forest_accuracy = accuracy_score(
+    y_test, forest_clf.predict(X_test), normalize=True
+)
+final_extra_tree = accuracy_score(
+    y_test, extra_tree_clf.predict(X_test), normalize=True
+)
+final_svm_accuracy = accuracy_score(y_test, svm_clf.predict(X_test), normalize=True)
+final_voting_accuracy = accuracy_score(
+    y_test, voting_clf.predict(X_test), normalize=True
+)
+final_rand_blender_accuracy = accuracy_score(
+    y_test, random_forest_blender.predict(X_test), normalize=True
+)
