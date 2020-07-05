@@ -6,5 +6,6 @@ models/
 
 # mnist data
 mnist/data
+pca/data
 ensemble/data
 gaindecode/data
