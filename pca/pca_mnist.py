@@ -16,23 +16,35 @@ sys.path.insert(1, module_path)
 from util.colors import cga_p1_light
 
 # Load MNIST dataset
-X_train = joblib.load("data/mnist_training_data.pkl")
-y_train = joblib.load("data/mnist_training_labels.pkl")
+X_train = joblib.load("../mnist/data/mnist_training_data.pkl")
+y_train = joblib.load("../mnist/data/mnist_training_labels.pkl")
 
 # Reduce via PCA
-pca = PCA(n_components=154)
+pca = PCA(n_components=0.95)
 X_reduced = pca.fit_transform(X_train)
 X_recovered = pca.inverse_transform(X_reduced)
 
 # the good, the bad, and the leftover crack
-original_image = X_train[10, :].reshape(28, 28)
-#reduced_image = X_reduced[10, :].reshape(28, 28)
-recovered_image = X_recovered[10, :].reshape(28, 28)
+image_number = 666
+original_image = X_train[image_number, :].reshape(28, 28)
+recovered_image = X_recovered[image_number, :].reshape(28, 28)
+
+pca2 = PCA(n_components=0.95)
+X_reduced2 = pca.fit_transform(original_image)
+X_recovered2 = pca.inverse_transform(X_reduced2)
+
 
 # Plot images
-plt.subplot(1, 3, 1)
+plt.subplot(2, 2, 1)
 plt.title("the good")
-plt.imshow(original_image, cmap=matplotlib.cm.binary, interpolation="none")
-plt.subplot(1, 3, 3)
+plt.imshow(original_image, cmap=cga_p1_light, interpolation="none")
+plt.subplot(2, 2, 2)
 plt.title("the leftover crack")
-plt.imshow(recovered_image, cmap=matplotlib.cm.binary, interpolation="none")
+plt.imshow(recovered_image, cmap=cga_p1_light, interpolation="none")
+
+plt.subplot(2, 2, 3)
+plt.title("the good")
+plt.imshow(original_image, cmap=cga_p1_light, interpolation="none")
+plt.subplot(2, 2, 4)
+plt.title("the leftover crack")
+plt.imshow(X_recovered2, cmap=cga_p1_light, interpolation="none")
