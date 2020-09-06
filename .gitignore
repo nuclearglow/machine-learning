@@ -1,4 +1,5 @@
 .vscode/.ropeproject
+.spyproject/
 __pycache__
 
 # generated models
