@@ -50,7 +50,7 @@ print(np.std(weights))
 
 model.compile(
     loss="sparse_categorical_crossentropy",
-    optimizer=keras.optimizers.SGD(learning_rate=0.1),
+    optimizer=keras.optimizers.SGD(learning_rate=0.01),
     metrics=["accuracy"],
 )
 
@@ -60,3 +60,5 @@ pd.DataFrame(history.history).plot(figsize=(8, 5))
 plt.grid(True)
 plt.gca().set_ylim(0, 1)
 plt.show()
+
+model.evaluate(X_test, y_test)
