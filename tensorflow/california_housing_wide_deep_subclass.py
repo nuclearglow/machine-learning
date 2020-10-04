@@ -15,6 +15,25 @@ from sklearn.datasets import fetch_california_housing
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
+# A wide and deep network with two inputs, a main and an aux output and two hidden layers
+class WideAndDeepModel(keras.Model):
+    def __init__(self, units=30, activation="relu", **kwargs):
+        super().__init__(**kwargs)
+        self.hidden1 = keras.layers.Dense(units, activation=activation, name="hidden1")
+        self.hidden2 = keras.layers.Dense(units, activation=activation, name="hidden2")
+        self.main_output = keras.layers.Dense(1)
+        self.aux_output = keras.layers.Dense(1)
+
+    def call(self, inputs):
+        input_A, input_B = inputs
+        hidden1 = self.hidden1(input_B)
+        hidden2 = self.hidden2(hidden1)
+        concat = keras.layers.concatenate([input_A, hidden2])
+        main_output = self.main_output(concat)
+        aux_output = self.aux_output(hidden2)
+        return main_output, aux_output
+
+
 housing = fetch_california_housing()
 
 X_train_full, X_test, y_train_full, y_test = train_test_split(
@@ -27,18 +46,7 @@ X_train = scaler.fit_transform(X_train)
 X_valid = scaler.fit_transform(X_valid)
 X_test = scaler.fit_transform(X_test)
 
-
-input_wide = keras.layers.Input(shape=[5], name="input_wide")
-input_deep = keras.layers.Input(shape=[6], name="input_deep")
-
-hidden1 = keras.layers.Dense(30, activation="relu", name="hidden1")(input_deep)
-hidden2 = keras.layers.Dense(30, activation="relu", name="hidden2")(hidden1)
-
-concat = keras.layers.Concatenate()([input_wide, hidden2])
-output = keras.layers.Dense(1, name="main_output")(concat)
-aux_output = keras.layers.Dense(1, name="aux_output")(hidden2)
-model = keras.Model(inputs=[input_wide, input_deep], outputs=[output, aux_output])
-model.summary()
+model = WideAndDeepModel()
 
 model.compile(
     loss=["mean_squared_error", "mean_squared_error"],
