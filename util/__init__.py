@@ -1,3 +1,5 @@
+import os
+import time
 import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
@@ -7,6 +9,11 @@ from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_
 from sklearn.metrics import precision_recall_curve
 from sklearn.metrics import roc_curve, roc_auc_score
 from sklearn.model_selection import learning_curve
+
+# Keras Tensorboard Callback
+def get_run_logdir(logpath=os.path.join(os.curdir, "tensorboard_logs")):
+    run_id = time.strftime("run-%Y-%m-%d-%H-%M-%S")
+    return os.path.join(logpath, run_id)
 
 
 def intersection(list1, list2):

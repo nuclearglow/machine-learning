@@ -10,3 +10,9 @@ mnist/data
 pca/data
 ensemble/data
 gaindecode/data
+
+# tensorbaord logs
+tensorboard_logs/
+
+# tensorboard models
+*.h5

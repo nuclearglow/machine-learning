@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import os
 
 # TensorFlow and tf.keras
 import tensorflow as tf
 from tensorflow import keras
+
+# utils
+from util import get_run_logdir
 
 # Helper libraries
 import numpy as np
@@ -27,7 +31,7 @@ X_train = scaler.fit_transform(X_train)
 X_valid = scaler.fit_transform(X_valid)
 X_test = scaler.fit_transform(X_test)
 
-
+# functional API
 input_wide = keras.layers.Input(shape=[5], name="input_wide")
 input_deep = keras.layers.Input(shape=[6], name="input_deep")
 
@@ -51,11 +55,18 @@ X_valid_wide, X_valid_deep = X_valid[:, :5], X_valid[:, 2:]
 X_test_wide, X_test_deep = X_test[:, :5], X_test[:, 2:]
 X_new_wide, X_new_deep = X_test_wide[:10, :], X_test_deep[:10, :]
 
+# Tensorbaord callbacks
+checkpoint_cb = keras.callbacks.ModelCheckpoint(
+    f"{os.path.basename(__file__)}_model.h5"
+)
+tensorboard_cb = keras.callbacks.TensorBoard(get_run_logdir(), histogram_freq=1)
+
 history = model.fit(
     [X_train_wide, X_train_deep],
     [y_train, y_train],
     epochs=20,
     validation_data=([X_valid_wide, X_valid_deep], [y_valid, y_valid]),
+    callbacks=[tensorboard_cb, checkpoint_cb],
 )
 
 mse_test = model.evaluate([X_test_wide, X_test_deep], [y_test, y_test])
