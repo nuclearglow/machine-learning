@@ -133,3 +133,9 @@ for isotope in ["I-131", "Cs-134", "Cs-137"]:
     )
 
 interpolated_data.drop(labels=one_hot_predictors, axis=1, inplace=True)
+
+# TODOs
+# 3 Regressions-Modelle:
+#   cherntime, lat, lng, cherndist, etc. -> Schätzt die Isotop-Konzentration
+# 1 Klassifikator-Modell
+#   cherntime, isotop-kontzentration ->Schätzt, welche Stadt

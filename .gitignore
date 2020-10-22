@@ -16,3 +16,6 @@ tensorboard_logs/
 
 # tensorboard models
 *.h5
+
+# local conda env
+ml.yml
