@@ -15,13 +15,15 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import PolynomialFeatures, StandardScaler, OneHotEncoder
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import GridSearchCV
+from pathlib import Path
 
-
-# Path vars
-path_data = "/home/plkn/repos/machine-learning/chernair/"
+# current directory with data file
+data_path = os.path.abspath(f"{os.getcwd()}/CHERNAIR.csv")
 
 # Read data
-data = pd.read_csv(os.path.join(path_data, "CHERNAIR.csv"))
+data = pd.read_csv(data_path)
+
+# Rename columns
 data.rename(
     columns={
         "PAYS": "country",
@@ -34,7 +36,6 @@ data.rename(
     },
     inplace=True,
 )
-
 
 # Chernobyl explosion coordinates
 chern_lat_lng = (51.386998452, 30.092666296)
@@ -114,19 +115,21 @@ def interpolate_missing_isotope_values(data, isotope, predictors):
     return data
 
 
-# one-hot encode city
+# one-hot encode cities
 interpolated_data = data.copy(deep=True)
 one_hot_encoder = OneHotEncoder(categories="auto")
 df_expansion = pd.DataFrame(
     one_hot_encoder.fit_transform(interpolated_data[["city_code"]]).toarray()
 )
 interpolated_data = pd.concat([interpolated_data, df_expansion], axis=1, sort=False)
+
 predictors = ["cherntime"]
-#one_hot_predictors = [str(c) for c in range(0, 95)]
 one_hot_predictors = list(range(0, 95))
 predictors = predictors + one_hot_predictors
 
 for isotope in ["I-131", "Cs-134", "Cs-137"]:
-    interpolated_data = interpolate_missing_isotope_values(interpolated_data, isotope, predictors)
-    
+    interpolated_data = interpolate_missing_isotope_values(
+        interpolated_data, isotope, predictors
+    )
+
 interpolated_data.drop(labels=one_hot_predictors, axis=1, inplace=True)
