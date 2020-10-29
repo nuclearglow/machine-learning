@@ -16,9 +16,10 @@ from sklearn.preprocessing import PolynomialFeatures, StandardScaler, OneHotEnco
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import GridSearchCV
 from pathlib import Path
+import joblib
 
 # current directory with data file
-data_path = os.path.abspath(f"{os.getcwd()}/CHERNAIR.csv")
+data_path = os.path.abspath(f"{os.getcwd()}/data/chernair-original.csv")
 
 # Read data
 data = pd.read_csv(data_path)
@@ -134,8 +135,12 @@ for isotope in ["I-131", "Cs-134", "Cs-137"]:
 
 interpolated_data.drop(labels=one_hot_predictors, axis=1, inplace=True)
 
+# save data to disk
+joblib.dump(interpolated_data, "data/chernair-preprocessed.pkl")
+
 # TODOs
 # 3 Regressions-Modelle:
 #   cherntime, lat, lng, cherndist, etc. -> Schätzt die Isotop-Konzentration
+
 # 1 Klassifikator-Modell
 #   cherntime, isotop-kontzentration ->Schätzt, welche Stadt
