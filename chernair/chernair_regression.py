@@ -32,6 +32,9 @@ preprocessed_data_path = os.path.abspath(
 data = joblib.load(preprocessed_data_path)
 
 X = data[["lat", "lng", "cherndist", "cherntime"]].to_numpy()
+scaler = StandardScaler()
+X = scaler.fit_transform(X)
+
 y = data["I-131_interpolated"].to_numpy()
 
 X_train_full, X_test, y_train_full, y_test = train_test_split(X, y, test_size=0.2)
@@ -74,7 +77,7 @@ keras_reg = keras.wrappers.scikit_learn.KerasRegressor(
 parameter_distribution = {
     "n_hidden": list(range(4)),
     "n_neurons": list(range(1, 101)),
-    "learning_rate": [3e-4, 3e-3, 3e-2],
+    "learning_rate": [0.1, 0.01, 0.001, 0.0001],
     "input_shape": [X_train.shape[1]],
 }
 
@@ -90,8 +93,8 @@ randomized_search_cv.fit(
     callbacks=[keras.callbacks.EarlyStopping(patience=10)],
 )
 
-best_params = randomized_search_cv.cv_best_params_
-best_score = randomized_search_cv.cv_best_score_
+best_params = randomized_search_cv.best_params_
+best_score = randomized_search_cv.best_score_
 
 # TODOs
 # 3 Regressions-Modelle:
