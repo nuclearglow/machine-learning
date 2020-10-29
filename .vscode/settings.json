@@ -4,5 +4,9 @@
     },
     "python.formatting.provider": "black",
     "editor.formatOnSave": true,
+<<<<<<< HEAD
+    "python.pythonPath": "/home/plkn/anaconda3/bin/python"
+=======
     "python.pythonPath": "home/plkn/anaconda3/bin/python"
+>>>>>>> 52790bf6e958d5feb5b98de6fd65b9e1b8ffdac4
 }
