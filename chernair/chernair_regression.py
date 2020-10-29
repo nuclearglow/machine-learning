@@ -25,7 +25,7 @@ import joblib
 
 # current directory with data file
 preprocessed_data_path = os.path.abspath(
-    f"{os.getcwd()}/data/chernair-preprocessing.pkl"
+    f"{os.getcwd()}/data/chernair-preprocessed.pkl"
 )
 
 # Read data
@@ -43,26 +43,39 @@ X_train, X_train_valid, y_train, y_train_valid = train_test_split(
 def build_model(n_hidden=1, n_neurons=30, learning_rate=3e-3, input_shape=[4]):
     model = keras.models.Sequential()
     # input (cherntime, lat, lng, cherndist)
-    model.add(keras.layers.InputLayer(input_shape=input_shape))
+    model.add(keras.layers.Input(shape=input_shape, name="input"))
     # n hidden dense layer with n neurons each
     for layer in range(n_hidden):
         model.add(keras.layers.Dense(n_neurons, activation="relu"))
     # output layer 1 neurone
-    model.add(keras.layers.Dense(1))
+    model.add(keras.layers.Dense(1, activation="sigmoid"))
     # model optimizer
     optimizer = keras.optimizers.SGD(lr=learning_rate)
     model.compile(loss="mse", optimizer=optimizer)
+    model.summary()
     return model
 
 
 # use a wrapper to get a scikit learn RegressorModel for the Keras factory method
-keras_reg = keras.wrappers.scikit_learn.KerasRegressor(build_model)
+keras_reg = keras.wrappers.scikit_learn.KerasRegressor(
+    build_fn=build_model, nb_epoch=100, batch_size=32, verbose=True
+)
+
+# simple
+# keras_reg.fit(
+#     X_train,
+#     y_train,
+#     epochs=100,
+#     validation_data=(X_train_valid, y_train_valid),
+#     callbacks=[keras.callbacks.EarlyStopping(patience=10)],
+# )
 
 # parameter range for randomized search
 parameter_distribution = {
     "n_hidden": list(range(4)),
-    "n_neurons": np.arange(1, 101),
-    "learning_rate": loguniform(3e-4, 3e-2, 10),
+    "n_neurons": list(range(1, 101)),
+    "learning_rate": [3e-4, 3e-3, 3e-2],
+    "input_shape": [X_train.shape[1]],
 }
 
 randomized_search_cv = RandomizedSearchCV(
