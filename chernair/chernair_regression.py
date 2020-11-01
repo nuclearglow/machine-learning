@@ -76,7 +76,7 @@ keras_reg = keras.wrappers.scikit_learn.KerasRegressor(
 # parameter range for randomized search
 parameter_distribution = {
     "n_hidden": list(range(5)),
-    "n_neurons": [5,10,20,50,100,200],
+    "n_neurons": [5, 10, 20, 50, 100, 200],
     "learning_rate": [0.1, 0.05, 0.01, 0.005, 0.001, 0.0005, 0.0001],
     "input_shape": [X_train.shape[1]],
 }
