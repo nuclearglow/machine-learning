@@ -8,18 +8,13 @@ import os
 
 from sklearn.utils import validation
 from tensorflow import keras
-import geopy.distance
-import datetime
-import multiprocessing
-import itertools
 from scipy.stats import loguniform
 from pytz import timezone
 from sklearn.linear_model import Ridge
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import PolynomialFeatures, StandardScaler, OneHotEncoder
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.model_selection import RandomizedSearchCV
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import RandomizedSearchCV, GridSearchCV, train_test_split
 from pathlib import Path
 import joblib
 
@@ -64,28 +59,17 @@ keras_reg = keras.wrappers.scikit_learn.KerasRegressor(
     build_fn=build_model, nb_epoch=100, batch_size=32, verbose=True
 )
 
-# simple
-# keras_reg.fit(
-#     X_train,
-#     y_train,
-#     epochs=100,
-#     validation_data=(X_train_valid, y_train_valid),
-#     callbacks=[keras.callbacks.EarlyStopping(patience=10)],
-# )
-
 # parameter range for randomized search
 parameter_distribution = {
-    "n_hidden": list(range(5)),
-    "n_neurons": [5, 10, 20, 50, 100, 200],
+    "n_hidden": list(range(6)),
+    "n_neurons": [5, 10, 20, 50, 100, 200, 500, 1000],
     "learning_rate": [0.1, 0.05, 0.01, 0.005, 0.001, 0.0005, 0.0001],
     "input_shape": [X_train.shape[1]],
 }
 
-randomized_search_cv = RandomizedSearchCV(
-    keras_reg, parameter_distribution, n_iter=10, cv=3
-)
+grid_search_cv = GridSearchCV(keras_reg, parameter_distribution, cv=3)
 
-randomized_search_cv.fit(
+grid_search_cv.fit(
     X_train,
     y_train,
     epochs=100,
@@ -93,9 +77,26 @@ randomized_search_cv.fit(
     callbacks=[keras.callbacks.EarlyStopping(patience=10)],
 )
 
-best_params = randomized_search_cv.best_params_
-best_score = randomized_search_cv.best_score_
+best_params = grid_search_cv.best_params_
+best_score = grid_search_cv.best_score_
 
-# TODOs
+optimized_model = build_model(
+    n_hidden=best_params["n_hidden"],
+    n_neurons=best_params["n_neurons"],
+    learning_rate=best_params["learning_rate"],
+)
+
+# simple
+optimized_model.fit(
+    X_train,
+    y_train,
+    epochs=1000,
+    validation_data=(X_train_valid, y_train_valid),
+    callbacks=[keras.callbacks.EarlyStopping(patience=10)],
+)
+
+optimized_model.save("trained_models/model_predict_I-131.h5")
+
+# TODO -> die zwei anderen modelle
 # 3 Regressions-Modelle:
 #   cherntime, lat, lng, cherndist, etc. -> Schätzt die Isotop-Konzentration
