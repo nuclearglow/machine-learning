@@ -22,7 +22,7 @@ import joblib
 
 # current directory with data file
 preprocessed_data_path = os.path.abspath(
-    f"{os.getcwd()}/data/chernair-preprocessing.pkl"
+    f"{os.getcwd()}/data/chernair-preprocessed.pkl"
 )
 
 # Read data
@@ -44,7 +44,7 @@ X_train, X_train_valid, y_train, y_train_valid = train_test_split(
     X_train_full, y_train_full, test_size=0.2
 )
 
-n_cities = y.unique().shape[0]
+n_cities = np.unique(y).shape[0]
 
 # Function builds and returns a regression model
 def build_model(n_hidden=1, n_neurons=30, learning_rate=3e-3, input_shape=[4]):
