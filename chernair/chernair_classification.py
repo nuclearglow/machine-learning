@@ -60,7 +60,7 @@ def build_model(n_hidden=1, n_neurons=30, learning_rate=3e-3, input_shape=[4]):
     model.add(keras.layers.Input(shape=input_shape, name="input"))
     # n hidden dense layer with n neurons each
     for layer in range(n_hidden):
-        model.add(keras.layers.Dense(n_neurons, activation="relu"))
+        model.add(keras.layers.Dense(n_neurons, activation="selu", kernel_initializer="lecun_normal"))
     # output layer 1 neurone
     model.add(keras.layers.Dense(n_cities, activation="softmax"))
     # model optimizer
@@ -148,13 +148,24 @@ new_model = build_model(
     n_hidden=4, n_neurons=1000, learning_rate=0.01, input_shape=[4],
 )
 
+# Checkpoint callback
+checkpoint_cb = keras.callbacks.ModelCheckpoint(
+    f"{os.getcwd()}/trained_models/model_predict_city_code_selu.h5",
+    save_best_only=True
+)
+
+# Early stopping callback
+earlystop_cb = keras.callbacks.EarlyStopping(
+    monitor='loss',
+    patience=200)
+
 # Fit the new model
 new_model.fit(
     X_train,
     y_train,
     epochs=10000,
     validation_data=(X_train_valid, y_train_valid),
-    callbacks=[keras.callbacks.EarlyStopping(patience=300)],
+    callbacks=[checkpoint_cb, earlystop_cb],
 )
 
 # Get predictions
