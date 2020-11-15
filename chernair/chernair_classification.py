@@ -22,6 +22,13 @@ from pathlib import Path
 import joblib
 from sklearn.metrics import accuracy_score, confusion_matrix, precision_score
 
+try:
+    physical_devices = tf.config.list_physical_devices("GPU")
+    tf.config.experimental.set_memory_growth(physical_devices[0], True)
+except:
+    # Invalid device or cannot modify virtual devices once initialized.
+    pass
+
 # current directory with data file
 preprocessed_data_path = os.path.abspath(
     f"{os.getcwd()}/data/chernair-preprocessed.pkl"
@@ -54,17 +61,33 @@ X_train, X_train_valid, y_train, y_train_valid = train_test_split(
 n_cities = np.unique(y).shape[0]
 
 # Function builds and returns a regression model
-def build_model(n_hidden=1, n_neurons=30, learning_rate=3e-3, input_shape=[4]):
+def build_model(
+    n_hidden=1,
+    n_neurons=30,
+    learning_rate=3e-3,
+    input_shape=[4],
+    batch_normalization=True,
+):
     model = keras.models.Sequential()
     # input (cherntime, lat, lng, cherndist)
     model.add(keras.layers.Input(shape=input_shape, name="input"))
+    # optionally, use batch normalization
+    if batch_normalization:
+        model.add(keras.layers.BatchNormalization())
     # n hidden dense layer with n neurons each
     for layer in range(n_hidden):
-        model.add(keras.layers.Dense(n_neurons, activation="selu", kernel_initializer="lecun_normal"))
+        model.add(
+            keras.layers.Dense(
+                n_neurons, activation="selu", kernel_initializer="lecun_normal"
+            )
+        )
+        # optionally, use batch normalization
+        if batch_normalization:
+            model.add(keras.layers.BatchNormalization())
     # output layer 1 neurone
     model.add(keras.layers.Dense(n_cities, activation="softmax"))
-    # model optimizer
-    optimizer = keras.optimizers.SGD(lr=learning_rate)
+    # model optimizer, enhance with Momentum Optimization, and use Nesterov Accelerated Optimization (look ahead in theta)
+    optimizer = keras.optimizers.SGD(lr=learning_rate, momentum=0.9, nesterov=True)
     model.compile(
         loss="sparse_categorical_crossentropy",
         optimizer=optimizer,
@@ -145,19 +168,20 @@ def build_model(n_hidden=1, n_neurons=30, learning_rate=3e-3, input_shape=[4]):
 
 # Build a new, custom model (sandbox)
 new_model = build_model(
-    n_hidden=4, n_neurons=1000, learning_rate=0.01, input_shape=[4],
+    n_hidden=4,
+    n_neurons=1000,
+    learning_rate=0.01,
+    input_shape=[4],
+    batch_normalization=False,
 )
 
 # Checkpoint callback
 checkpoint_cb = keras.callbacks.ModelCheckpoint(
-    f"{os.getcwd()}/trained_models/model_predict_city_code_selu.h5",
-    save_best_only=True
+    f"{os.getcwd()}/trained_models/model_predict_city_code_selu.h5", save_best_only=True
 )
 
 # Early stopping callback
-earlystop_cb = keras.callbacks.EarlyStopping(
-    monitor='loss',
-    patience=200)
+earlystop_cb = keras.callbacks.EarlyStopping(monitor="loss", patience=200)
 
 # Fit the new model
 new_model.fit(
