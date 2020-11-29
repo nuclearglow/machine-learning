@@ -8,6 +8,8 @@ from tensorflow import keras
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 
+from util import OneCycleScheduler
+
 # Helper libraries
 import numpy as np
 import pandas as pd
@@ -55,7 +57,7 @@ def build_model(
     n_hidden=20,
     n_neurons=100,
     input_shape=[3072],
-    learning_rate=3e-4,
+    learning_rate=1e-4,
     batch_normalization=False,
     dropout_rate=0.2,
 ):
@@ -93,7 +95,13 @@ def build_model(
     return model
 
 
-cifar_model = build_model()
+# basic params
+epochs = 1000
+batch_size = 128
+learning_rate = 1e-4
+
+# build model
+cifar_model = build_model(learning_rate=learning_rate)
 
 # Checkpoint callback
 checkpoint_cb = keras.callbacks.ModelCheckpoint(
@@ -103,14 +111,23 @@ checkpoint_cb = keras.callbacks.ModelCheckpoint(
 # Early stopping callback
 earlystop_cb = keras.callbacks.EarlyStopping(monitor="loss", patience=20)
 
+# Learning Rate Scheduler
+learning_rate_cb = OneCycleScheduler(
+    lr_max=1e-4,
+    n_data_points=X_train.shape[0],
+    epochs=epochs,
+    batch_size=batch_size,
+    verbose=0,
+)
+
 # Fit the new model
 history = cifar_model.fit(
     X_train,
     y_train,
-    epochs=10000,
-    batch_size=128,
+    epochs=epochs,
+    batch_size=batch_size,
     validation_data=(X_valid, y_valid),
-    callbacks=[checkpoint_cb, earlystop_cb],
+    callbacks=[checkpoint_cb, earlystop_cb, learning_rate_cb],
 )
 
 plot_model_history(history)
