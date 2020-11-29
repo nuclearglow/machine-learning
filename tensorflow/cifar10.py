@@ -56,7 +56,7 @@ def build_model(
     n_neurons=100,
     input_shape=[3072],
     learning_rate=3e-4,
-    batch_normalization=True,
+    batch_normalization=False,
 ):
     # init
     model = keras.models.Sequential()
@@ -70,7 +70,7 @@ def build_model(
     for layer in range(n_hidden):
         model.add(
             keras.layers.Dense(
-                n_neurons, activation="elu", kernel_initializer="he_normal",
+                n_neurons, activation="selu", kernel_initializer="lecun_normal",
             )
         )
         # optionally, use batch normalization
