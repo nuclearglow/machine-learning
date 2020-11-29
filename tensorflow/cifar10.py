@@ -56,7 +56,7 @@ def build_model(
     n_neurons=100,
     input_shape=[3072],
     learning_rate=3e-4,
-    batch_normalization=False,
+    batch_normalization=True,
 ):
     # init
     model = keras.models.Sequential()
