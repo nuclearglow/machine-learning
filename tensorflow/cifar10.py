@@ -33,13 +33,29 @@ X_test = scaler.fit_transform(X_test.reshape((X_test.shape[0], -1)))
 # Determine number of classes
 n_classes = np.unique(y_train_full).shape[0]
 
+# Plot model history function
+def plot_model_history(history):
+    epochs = history.epoch
+    accuracy = history.history["accuracy"]
+    val_accuracy = history.history["val_accuracy"]
+    plt.title("History")
+    plt.plot(epochs, accuracy)
+    fig = plt.figure()
+    ax = fig.add_axes([0, 0, 1, 1])
+    ax.plot(epochs, accuracy, label="accuracy")
+    ax.plot(epochs, val_accuracy, label="val_accuracy")
+    ax.set_title("model accuracy history")
+    ax.set_xlabel("epochs")
+    ax.set_ylabel("accuracies")
+    ax.legend(loc=0)
+
 
 # Function builds and returns a regression model
 def build_model(
     n_hidden=20,
     n_neurons=100,
     input_shape=[3072],
-    learning_rate=3e-3,
+    learning_rate=3e-4,
     batch_normalization=False,
 ):
     # init
@@ -82,13 +98,16 @@ checkpoint_cb = keras.callbacks.ModelCheckpoint(
 )
 
 # Early stopping callback
-earlystop_cb = keras.callbacks.EarlyStopping(monitor="loss", patience=5)
+earlystop_cb = keras.callbacks.EarlyStopping(monitor="loss", patience=20)
 
 # Fit the new model
-cifar_model.fit(
+history = cifar_model.fit(
     X_train,
     y_train,
     epochs=10000,
+    batch_size=128,
     validation_data=(X_valid, y_valid),
     callbacks=[checkpoint_cb, earlystop_cb],
 )
+
+plot_model_history(history)
