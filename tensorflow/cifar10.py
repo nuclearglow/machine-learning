@@ -57,6 +57,7 @@ def build_model(
     input_shape=[3072],
     learning_rate=3e-4,
     batch_normalization=False,
+    dropout_rate=0.2,
 ):
     # init
     model = keras.models.Sequential()
@@ -76,6 +77,8 @@ def build_model(
         # optionally, use batch normalization
         if batch_normalization:
             model.add(keras.layers.BatchNormalization())
+        if dropout_rate > 0:
+            model.add(keras.layers.dropout(rate=dropout_rate))
     # output layer 1 neurone
     model.add(keras.layers.Dense(n_classes, activation="softmax"))
     # model optimizer, enhance with Momentum Optimization, and use Nesterov Accelerated Optimization (look ahead in theta)
