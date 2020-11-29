@@ -78,7 +78,7 @@ def build_model(
         if batch_normalization:
             model.add(keras.layers.BatchNormalization())
         if dropout_rate > 0:
-            model.add(keras.layers.dropout(rate=dropout_rate))
+            model.add(keras.layers.Dropout(rate=dropout_rate))
     # output layer 1 neurone
     model.add(keras.layers.Dense(n_classes, activation="softmax"))
     # model optimizer, enhance with Momentum Optimization, and use Nesterov Accelerated Optimization (look ahead in theta)
