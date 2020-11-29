@@ -44,7 +44,6 @@ def build_model(
 ):
     # init
     model = keras.models.Sequential()
-    initializer_he_normal = tf.keras.initializers.he_normal()
 
     # input (cherntime, lat, lng, cherndist)
     model.add(keras.layers.Input(shape=input_shape, name="input"))
@@ -55,7 +54,7 @@ def build_model(
     for layer in range(n_hidden):
         model.add(
             keras.layers.Dense(
-                n_neurons, activation="elu", kernel_initializer=initializer_he_normal
+                n_neurons, activation="elu", kernel_initializer="he_normal",
             )
         )
         # optionally, use batch normalization
@@ -64,7 +63,7 @@ def build_model(
     # output layer 1 neurone
     model.add(keras.layers.Dense(n_classes, activation="softmax"))
     # model optimizer, enhance with Momentum Optimization, and use Nesterov Accelerated Optimization (look ahead in theta)
-    optimizer = (tf.keras.optimizers.Nadam(learning_rate=learning_rate, name="Nadam"),)
+    optimizer = tf.keras.optimizers.Nadam(learning_rate=learning_rate, name="Nadam")
     # optimizer = keras.optimizers.SGD(lr=learning_rate, momentum=0.9, nesterov=True)
     model.compile(
         loss="sparse_categorical_crossentropy",
@@ -83,7 +82,7 @@ checkpoint_cb = keras.callbacks.ModelCheckpoint(
 )
 
 # Early stopping callback
-earlystop_cb = keras.callbacks.EarlyStopping(monitor="loss", patience=100)
+earlystop_cb = keras.callbacks.EarlyStopping(monitor="loss", patience=5)
 
 # Fit the new model
 cifar_model.fit(
