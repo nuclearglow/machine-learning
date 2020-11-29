@@ -6,6 +6,7 @@ import os
 import tensorflow as tf
 from tensorflow import keras
 from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 
 from util import OneCycleScheduler
@@ -131,3 +132,17 @@ history = cifar_model.fit(
 )
 
 plot_model_history(history)
+
+# Make predictions
+predictions = np.stack(cifar_model(X_test))
+y_preds = predictions.argmax(axis=1)
+acc = accuracy_score(y_preds, y_test.ravel())
+
+# Make Montecarlo dropout predictions
+predictions = np.stack([cifar_model(X_test, training=True) for sample in range(100)])
+y_preds = predictions.mean(axis=0).argmax(axis=1)
+acc_mc = accuracy_score(y_preds, y_test.ravel())
+
+
+
+
