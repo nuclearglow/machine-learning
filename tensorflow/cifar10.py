@@ -143,6 +143,3 @@ predictions = np.stack([cifar_model(X_test, training=True) for sample in range(1
 y_preds = predictions.mean(axis=0).argmax(axis=1)
 acc_mc = accuracy_score(y_preds, y_test.ravel())
 
-
-
-
