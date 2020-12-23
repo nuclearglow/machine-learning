@@ -93,7 +93,12 @@ def custom_loss(y_true, y_pred):
     # tf.print("y_pred: ", y_pred, y_pred.shape, y_pred.dtype)
 
     y_delta = tf.math.subtract(y_true, y_pred)
-    # tf.print("y_delta: ", y_delta, y_delta.shape, y_delta.dtype)
+    tf.print("y_delta: ", y_delta, y_delta.shape, y_delta.dtype)
+
+
+    tf.print("y_loss: ", y_loss, y_loss.shape, y_loss.dtype)
+
+    import ipdb; ipdb.set_trace()
 
     n_nonzero = tf.math.count_nonzero(y_delta, dtype=tf.float32)
     tf.print("n_nonzero: ", n_nonzero, n_nonzero.shape, n_nonzero.dtype)
@@ -101,13 +106,13 @@ def custom_loss(y_true, y_pred):
     # tmp = tf.shape(y_true)[0]
     # tf.print("tmp: ", tmp, tmp.dtype)
 
-    n_observations = tf.shape(y_true, out_type=tf.float32)
+    n_observations = tf.constant(y_true.shape[0], dtype=tf.float32)
     tf.print(
-        "n_observations: ", n_observations, n_observations.shape, n_observations.dtype
+        "n_observations: ", n_observations
     )
 
-    prop_wrong = tf.math.divide(n_nonzero, n_observations)
-    tf.print("prop_wrong: ", prop_wrong, prop_wrong.shape, prop_wrong.dtype)
+    prop_wrong = n_nonzero / n_observations
+    tf.print("prop_wrong: ", prop_wrong)
 
     # y_true1 = tf.cast(y_true, dtype=tf.int32)
     # delta = y_true1 - y_pred1

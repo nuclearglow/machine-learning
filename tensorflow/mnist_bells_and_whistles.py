@@ -67,9 +67,7 @@ model.fit(
     y_train,
     epochs=1000,
     validation_data=(X_train_valid, y_train_valid),
-    callbacks=[
-        keras.callbacks.EarlyStopping(patience=3),
-    ],
+    callbacks=[keras.callbacks.EarlyStopping(patience=3),],
 )
 
 model.save("trained_models/mnist_best_model.h5")
