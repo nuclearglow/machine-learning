@@ -106,13 +106,15 @@ def custom_loss(y_true, y_pred):
     # tmp = tf.shape(y_true)[0]
     # tf.print("tmp: ", tmp, tmp.dtype)
 
-    n_observations = tf.constant(y_true.shape[0], dtype=tf.float32)
+    n_observations = tf.constant(y_true.shape[0])
     tf.print(
-        "n_observations: ", n_observations
+        "n_observations: ", n_observations,
     )
 
-    prop_wrong = n_nonzero / n_observations
-    tf.print("prop_wrong: ", prop_wrong)
+    prop_wrong = tf.math.divide(n_nonzero, n_observations)
+    tf.print(
+        "prop_wrong: ", prop_wrong,
+    )
 
     # y_true1 = tf.cast(y_true, dtype=tf.int32)
     # delta = y_true1 - y_pred1
@@ -170,4 +172,9 @@ model_evaluation = model.evaluate(X_test, y_test, return_dict=True)
 
 # predict classes
 # y_class_prediction = class_names[y_proba.argmax(axis=1).astype(np.int)]
+
+
+
+
+
 
