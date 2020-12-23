@@ -11,9 +11,11 @@ from datetime import datetime, timedelta
 import requests
 import locale
 import time
-import pandas
+import pandas as pd
 import math
 from bs4 import BeautifulSoup
+import joblib
+import os
 
 # DataFrame columns
 columns = [
@@ -34,7 +36,7 @@ columns = [
 ]
 
 # Init DataFrame
-df = pandas.DataFrame([], columns=columns)
+df = pd.DataFrame([], columns=columns)
 
 # Set sleep time between scrapes
 sleep_time = 3
@@ -43,8 +45,11 @@ sleep_time = 3
 locale.setlocale(locale.LC_ALL, "de_DE.UTF-8")
 
 # forum page index
-pages = range(1, 5)
-username = "tom.bombadil"
+pages = range(1, 361)
+
+# Some counters
+post_number_tom = 0
+message_number_total = 0
 
 # Iterate pages
 for page in pages:
@@ -63,8 +68,6 @@ for page in pages:
     posts = soup.find_all("li", {"class": "postcontainer"})
 
     # Iterate posts of page (postcontainer)
-    post_number_tom = 0
-    message_number_total = 0
     for post_number_all, post in enumerate(posts, start=1):
 
         # Check if post is a guest post
@@ -135,6 +138,20 @@ for page in pages:
             }
 
             # Append dictionary to df
-            df.append(data, ignore_index=True)
+            df_tmp = pd.DataFrame([data], columns=data.keys())
+            df = pd.concat([df, df_tmp], axis = 0, ignore_index=True)
 
     time.sleep(sleep_time)
+
+# Save data
+file = "lustige_story_data.joblib"
+path = "/home/plkn/Desktop/"
+fn = os.path.join(path, file)
+joblib.dump(df, fn)
+
+
+
+
+
+
+
