@@ -17,6 +17,9 @@ from bs4 import BeautifulSoup
 import joblib
 import os
 
+# current directory with data file
+data_path = os.path.abspath(f"{os.getcwd()}/data/{os.path.basename(__file__)}.joblib")
+
 # DataFrame columns
 columns = [
     "datetime",
@@ -39,15 +42,17 @@ columns = [
 df = pd.DataFrame([], columns=columns)
 
 # Set sleep time between scrapes
-sleep_time = 3
+sleep_time = 1
 
 # switch to german locale
 locale.setlocale(locale.LC_ALL, "de_DE.UTF-8")
 
 # forum page index
+# full range: 1, 361
 pages = range(1, 361)
 
 # Some counters
+post_number_all = 0
 post_number_tom = 0
 message_number_total = 0
 
@@ -68,7 +73,10 @@ for page in pages:
     posts = soup.find_all("li", {"class": "postcontainer"})
 
     # Iterate posts of page (postcontainer)
-    for post_number_all, post in enumerate(posts, start=1):
+    for post in posts:
+
+        # absolute count
+        post_number_all += 1
 
         # Check if post is a guest post
         if len(post.find_all("span", {"class": "username guest"})) > 0:
@@ -81,11 +89,10 @@ for page in pages:
         if username != "tom.bombadil":
             continue
 
-        # relative count
+        # absolute count for tom
         post_number_tom += 1
 
         # get the date and time, parse into date
-        # TODO: 'heute' und 'gestern'
         post_date_container = post.find_all("span", {"class": "postdate"})[0].find_all(
             "span", {"class": "date"}
         )[0]
@@ -106,8 +113,12 @@ for page in pages:
         date = datetime.strptime(f"{post_date} {post_time}", "%d. %B %Y %H:%M")
 
         # Get start of thread time
-        if post_number_all == 1:
+        if post_number_tom == 1:
             date_start = date
+
+        # remove all citations from the post
+        for quote in post.find_all("div", {"class": "quote_container"}):
+            quote.decompose()
 
         # parse the post content into an ordered message list
         post_content = post.find_all("div", {"class": "content"})[0].find_all(text=True)
@@ -139,19 +150,9 @@ for page in pages:
 
             # Append dictionary to df
             df_tmp = pd.DataFrame([data], columns=data.keys())
-            df = pd.concat([df, df_tmp], axis = 0, ignore_index=True)
+            df = pd.concat([df, df_tmp], axis=0, ignore_index=True)
 
     time.sleep(sleep_time)
 
 # Save data
-file = "lustige_story_data.joblib"
-path = "/home/plkn/Desktop/"
-fn = os.path.join(path, file)
-joblib.dump(df, fn)
-
-
-
-
-
-
-
+joblib.dump(df, data_path)
