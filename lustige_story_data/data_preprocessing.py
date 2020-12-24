@@ -9,10 +9,39 @@ import os
 import joblib
 import locale
 import requests
+import pandas as pd
 import tinydb
 import time
 import math
+import re
 from bs4 import BeautifulSoup
+
+# DataFrame columns
+columns = [
+    "datetime",
+    "year",
+    "month",
+    "day",
+    "hour",
+    "minute",
+    "minutes_since_thread_start",
+    "page_number",
+    "post_number_all",
+    "post_number_tom",
+    "message_number_total",
+    "message_number_post",
+    "message_length",
+    "word_number_total",
+    "word_number_message",
+    "word",
+    "word_db",
+    "word_freq",
+    "word_freq_rank",
+    "word_classes",
+]
+
+# Init DataFrame for word based data
+df_words = pd.DataFrame([], columns=columns)
 
 # A tiny db
 db_path = os.path.abspath(f"{os.getcwd()}/data/words.json")
@@ -26,6 +55,9 @@ sleep_time = 1
 
 # switch to german locale
 locale.setlocale(locale.LC_ALL, "de_DE.UTF-8")
+
+# precompile regexp
+only_alphanumeric_regex = re.compile("[^a-zA-Z0-9öäüÖÄÜß\s]")
 
 # current directory with data file
 data_path = os.path.abspath(f"{os.getcwd()}/data/{filename}")
@@ -128,4 +160,51 @@ def get_word_metadata(word):
     return final_metadata
 
 
-print(get_word_metadata(word="dem"))
+# Iterate message dataframe
+new_idx = [
+    "word_number_total",
+    "word_number_message",
+    "word",
+    "word_db",
+    "word_freq",
+    "word_freq_rank",
+    "word_classes",
+]
+
+word_counter = 0
+for index, row in df.iloc[:25].iterrows():
+
+    # Split message into list of words
+    message = row["message"]
+
+    # Replace non alphanumeric chars
+    message = only_alphanumeric_regex.sub("", message)
+    words = message.split(" ")
+
+    # Iterate words
+    for word_position, word in enumerate(words):
+        word_counter += 1
+        word_metadata = get_word_metadata(word)
+
+        # Get word data as list
+        new_data = [
+            word_counter,
+            word_position,
+            word,
+            word_metadata["word"],
+            word_metadata["freq_rank"],
+            word_metadata["freq_class"],
+            word_metadata["word_classes"],
+        ]
+
+        # Create series
+        series1 = row.drop(labels=["message"], inplace=False)
+        series2 = pd.Series(new_data, index=new_idx)
+
+        # Concatenate
+        df_words = df_words.append(series1.append(series2), ignore_index=True)
+
+        # Append dictionary to df
+        # df_tmp = pd.DataFrame([data], columns=data.keys())
+        # df = pd.concat([df, df_tmp], axis=0, ignore_index=True)
+

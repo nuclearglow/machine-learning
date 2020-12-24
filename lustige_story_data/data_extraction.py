@@ -128,6 +128,10 @@ for page in pages:
 
         # Iterate messages in post
         for message_number, message in enumerate(messages, start=1):
+
+            # Exclude messages with length <= 3
+            # TODO
+
             message_number_total += 1
             data = {
                 "datetime": date,
