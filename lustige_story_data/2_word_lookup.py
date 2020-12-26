@@ -226,4 +226,3 @@ filename_out = f"data_words_scraped_{file_time_string}.joblib"
 data_path = os.path.abspath(f"{os.getcwd()}/data/{filename_out}")
 joblib.dump(df_words, data_path)
 
-
