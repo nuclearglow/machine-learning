@@ -14,7 +14,6 @@ import tinydb
 import time
 import math
 import re
-import datetime
 from bs4 import BeautifulSoup
 
 # DataFrame columns
@@ -46,21 +45,15 @@ columns = [
 df_words = pd.DataFrame([], columns=columns)
 
 # A tiny db
-path_data = os.getcwd() + "/data/"
+path_data = f"{os.getcwd()}/data/"
 db_file = os.path.abspath(f"{path_data}toms_words_database.json")
 db = tinydb.TinyDB(db_file)
 
 # Load last scrape dataframe
 file_list = os.listdir(path_data)
-scrape_files = [x for x in file_list if x.startswith("tom_scrapedata_")]
-dts = []
-for file in scrape_files:
-    dt = file.strip(".joblib").split("_")[2:]
-    dt = dt[0].split("-") + dt[1].split("-")
-    dt = [dt[i] for i in [2, 1, 0, 3, 4, 5]]
-    dts.append(datetime.datetime(*map(int, dt)))
-file_time_string = max(dts).strftime("%d-%m-%Y_%H-%M-%S")
-filename = f"tom_scrapedata_{file_time_string}.joblib"
+scrape_file_name = [x for x in file_list if x.startswith("tom_scrapedata_")]
+scrape_file_name.sort()
+scrape_file_name = scrape_file_name[-1]
 
 # Set sleep time between Leipzig requests
 sleep_time = 1
@@ -72,7 +65,7 @@ locale.setlocale(locale.LC_ALL, "de_DE.UTF-8")
 only_alphanumeric_regex = re.compile("[^a-zA-Z0-9öäüÖÄÜß\s]")
 
 # current directory with data file
-data_path = os.path.abspath(f"{os.getcwd()}/data/{filename}")
+data_path = os.path.abspath(f"{os.getcwd()}/data/{scrape_file_name}")
 
 # Load message DataFrame
 df_messages = joblib.load(data_path)
@@ -222,7 +215,7 @@ for index, row in df_messages.iterrows():
         df_words = df_words.append(series1.append(series2), ignore_index=True)
 
 # Save data
-filename_out = f"data_words_scraped_{file_time_string}.joblib"
+filename_out = scrape_file_name.replace("tom_scrapedata_", "data_words_scraped_")
 data_path = os.path.abspath(f"{os.getcwd()}/data/{filename_out}")
 joblib.dump(df_words, data_path)
 

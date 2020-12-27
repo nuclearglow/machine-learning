@@ -5,29 +5,199 @@ Created on Sat Dec 26 19:11:32 2020
 
 @author: nuky, plkn
 """
+# Imports
 import os
-
+import joblib
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
 
 # Load last scrape dataframe
-path_data = os.getcwd() + "/data/"
+path_data = f"{os.getcwd()}/data/"
 file_list = os.listdir(path_data)
-scrape_files = [x for x in file_list if x.startswith("tom_scrapedata_")]
-dts = []
-for file in scrape_files:
-    dt = file.strip(".joblib").split("_")[2:]
-    dt = dt[0].split("-") + dt[1].split("-")
-    dt = [dt[i] for i in [2, 1, 0, 3, 4, 5]]
-    dts.append(datetime.datetime(*map(int, dt)))
-file_time_string = max(dts).strftime("%d-%m-%Y_%H-%M-%S")
-filename = f"tom_scrapedata_{file_time_string}.joblib"
+word_file_name = [x for x in file_list if x.startswith("data_words_scraped_")]
+word_file_name.sort()
+word_file_name = word_file_name[-1]
+file_words = os.path.abspath(f"{path_data}{word_file_name}")
+df_words = joblib.load(file_words)
+
+# Add frequencies as column
+word_freqs = df_words["word_db"].value_counts().to_dict()
+df_words["occurences"] = 0
+df_words["occurences"] = df_words["word_db"].map(word_freqs.get)
+
+# Get unique words and corresponding frequencies
+df_unique = (
+    df_words[["word_db", "word_classes", "occurences"]]
+    .drop_duplicates(subset=["word_db"])
+    .sort_values(by="occurences", ascending=False)
+)
+
+# Get words with no detected classes
+df_empty = df_unique[df_unique["word_classes"].apply(lambda x: len(x)) == 0]
+
+# Keep only words with occurences > 5
+df_empty = df_empty[df_empty["occurences"] > 5].reset_index()
+
+# Manual Index of words we want to keep from empty
+words_to_keep_empty_index = [
+    1,
+    2,
+    3,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    25,
+    26,
+    27,
+    29,
+    30,
+    32,
+    34,
+    35,
+    36,
+    37,
+    38,
+    40,
+    41,
+    42,
+    45,
+    46,
+    48,
+    49,
+    50,
+    51,
+    52,
+    55,
+    56,
+    61,
+    62,
+    63,
+    64,
+    65,
+    67,
+    68,
+    69,
+    71,
+    73,
+    75,
+    77,
+    78,
+    79,
+    82,
+    83,
+    85,
+    86,
+    87,
+    88,
+    90,
+    91,
+    93,
+    94,
+    95,
+    96,
+    97,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    107,
+    108,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    118,
+    120,
+    121,
+    122,
+    124,
+    125,
+    127,
+    128,
+    129,
+    131,
+    134,
+    136,
+    137,
+    138,
+    139,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    159,
+    160,
+    161,
+    162,
+    164,
+    165,
+    167,
+    168,
+    169,
+    170,
+    173,
+    175,
+    177,
+    182,
+    183,
+    184,
+    188,
+    189,
+    190,
+    192,
+    193,
+    197,
+    198,
+    199,
+]
+
+words_to_give_a_class = df_empty["word_db"][words_to_keep_empty_index]
+
+a = df_words["word_db"].isin(words_to_give_a_class)
 
 
-# Save data
-filename_out = f"data_words_scraped_{file_time_string}.joblib"
-data_path = os.path.abspath(f"{os.getcwd()}/data/{filename_out}")
-joblib.dump(df_words, data_path)
+df_words.loc[df_words["word_db"].isin(words_to_give_a_class), "word_classes"] = ["manual"]
 
 
+# visual word frequency inspection
+# TODO: conda install -c conda-forge wordcloud
+nouns = " ".join(df_words["word_db"].to_list())
+wordcloud = WordCloud(
+    width=2048, height=1024, background_color="white", min_font_size=10
+).generate(nouns)
+plt.imshow(wordcloud, interpolation="bilinear")
+plt.axis("off")
+plt.show()
 
 # TODO: Create ordered table with word frequencies, add frequency info to dataset
 

@@ -18,7 +18,7 @@ import joblib
 import os
 
 # Get datetime as string
-dt_string = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
+dt_string = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
 # current directory and data file name
 data_path = os.path.abspath(f"{os.getcwd()}/data/tom_scrapedata_{dt_string}.joblib")
