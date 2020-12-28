@@ -7,6 +7,7 @@ Created on Sat Dec 26 19:11:32 2020
 """
 # Imports
 import os
+import re
 import joblib
 from wordcloud import WordCloud
 import networkx as nx
@@ -192,7 +193,10 @@ idx2 = df_words['word_classes'].apply(lambda x: set(x).issubset({"Noun", "Verb",
 idx3 = (df_words['occurences'] >= 5).values
 
 # Bool vector for non empty strings
-idx4 = df_words['word'].apply(lambda x: len(x) > 0).values
+idx4 = df_words['word'].apply(lambda x: len(x.strip()) > 0).values
+
+# Bool vector for non number strings
+idx5 = df_words['word'].apply(lambda x: x).values
 
 # Combine conditions
 idx = (idx1 | idx2) & idx3 & idx4
