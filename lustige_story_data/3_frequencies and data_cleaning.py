@@ -9,6 +9,7 @@ Created on Sat Dec 26 19:11:32 2020
 import os
 import joblib
 from wordcloud import WordCloud
+import networkx as nx
 import matplotlib.pyplot as plt
 
 # Load last scrape dataframe
@@ -181,24 +182,46 @@ words_to_keep_empty_index = [
     199,
 ]
 
-words_to_give_a_class = df_empty["word_db"][words_to_keep_empty_index]
+# Bool vector for words to keep by visual inspection
+idx1 = df_words["word_db"].isin(df_empty["word_db"][words_to_keep_empty_index]).values
 
-a = df_words["word_db"].isin(words_to_give_a_class)
+# Bool vector for words to keep with correct class
+idx2 = df_words['word_classes'].apply(lambda x: set(x).issubset({"Noun", "Verb", "Proper noun"})).values
 
+# Bool vector for occurences >= 5
+idx3 = (df_words['occurences'] >= 5).values
 
-df_words.loc[df_words["word_db"].isin(words_to_give_a_class), "word_classes"] = ["manual"]
+# Bool vector for non empty strings
+idx4 = df_words['word'].apply(lambda x: len(x) > 0).values
 
+# Combine conditions
+idx = (idx1 | idx2) & idx3 & idx4
 
-# visual word frequency inspection
-# TODO: conda install -c conda-forge wordcloud
-nouns = " ".join(df_words["word_db"].to_list())
+# Select relevant words
+df_chosen_words = df_words.iloc[idx]
+
+# Visualization via wordcloud
+w = " ".join(df_chosen_words["word_db"].to_list())
 wordcloud = WordCloud(
-    width=2048, height=1024, background_color="white", min_font_size=10
-).generate(nouns)
+    width=2048, height=1024, background_color="black", min_font_size=10
+).generate(w)
 plt.imshow(wordcloud, interpolation="bilinear")
 plt.axis("off")
 plt.show()
 
+# Get chosen words as list
+list_of_chosen_words = list(set(list(df_chosen_words["word_db"])))
+
+# Build a graph
+G = nx.Graph()
+for i, word in enumerate(list_of_chosen_words):
+    
+    
+    
+    
+    
+    
+    
 # TODO: Create ordered table with word frequencies, add frequency info to dataset
 
 # TODO: Visual inspection. Missing info for important (frequent nouns) words.
