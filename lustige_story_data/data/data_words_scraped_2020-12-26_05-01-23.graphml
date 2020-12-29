@@ -1,0 +1,4164 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d0" for="edge" attr.name="weight" attr.type="int" />
+  <graph edgedefault="undirected">
+    <node id="staffel" />
+    <node id="thrones" />
+    <node id="geh" />
+    <node id="hey" />
+    <node id="sehen" />
+    <node id="of" />
+    <node id="game" />
+    <node id="schaue" />
+    <node id="geschichte" />
+    <node id="kann" />
+    <node id="macht" />
+    <node id="will" />
+    <node id="spielen" />
+    <node id="schnauze" />
+    <node id="sag" />
+    <node id="geld" />
+    <node id="serie" />
+    <node id="sollte" />
+    <node id="gott" />
+    <node id="leute" />
+    <node id="juliette" />
+    <node id="silverton" />
+    <node id="herr" />
+    <node id="wollen" />
+    <node id="willst" />
+    <node id="finger" />
+    <node id="kriege" />
+    <node id="warte" />
+    <node id="dead" />
+    <node id="walking" />
+    <node id="the" />
+    <node id="hör" />
+    <node id="bekommst" />
+    <node id="hunger" />
+    <node id="gibt" />
+    <node id="tun" />
+    <node id="könnt" />
+    <node id="kriegst" />
+    <node id="gehe" />
+    <node id="fresse" />
+    <node id="bier" />
+    <node id="muss" />
+    <node id="gehen" />
+    <node id="trinken" />
+    <node id="hören" />
+    <node id="civ" />
+    <node id="arbeit" />
+    <node id="machen" />
+    <node id="bleib" />
+    <node id="hause" />
+    <node id="eier" />
+    <node id="frühstück" />
+    <node id="fliesen" />
+    <node id="spiegel" />
+    <node id="tisch" />
+    <node id="bleibt" />
+    <node id="können" />
+    <node id="ruhe" />
+    <node id="mache" />
+    <node id="schmeckt" />
+    <node id="bleiben" />
+    <node id="essen" />
+    <node id="hilfe" />
+    <node id="kommen" />
+    <node id="möchte" />
+    <node id="komm" />
+    <node id="esse" />
+    <node id="trinke" />
+    <node id="geht" />
+    <node id="pizza" />
+    <node id="kinder" />
+    <node id="wings" />
+    <node id="orleans" />
+    <node id="hot" />
+    <node id="new" />
+    <node id="soll" />
+    <node id="hasse" />
+    <node id="gegessen" />
+    <node id="bekommen" />
+    <node id="schmecken" />
+    <node id="bombadil" />
+    <node id="tom" />
+    <node id="stammtisch" />
+    <node id="bär" />
+    <node id="bären" />
+    <node id="schinken" />
+    <node id="sehe" />
+    <node id="müssen" />
+    <node id="könig" />
+    <node id="findet" />
+    <node id="kommt" />
+    <node id="darf" />
+    <node id="bra" />
+    <node id="daniela" />
+    <node id="angst" />
+    <node id="komme" />
+    <node id="bett" />
+    <node id="ok" />
+    <node id="mann" />
+    <node id="sage" />
+    <node id="holen" />
+    <node id="kannst" />
+    <node id="frau" />
+    <node id="hört" />
+    <node id="kaufen" />
+    <node id="hole" />
+    <node id="krieg" />
+    <node id="kerl" />
+    <node id="haue" />
+    <node id="sagen" />
+    <node id="vollpfosten" />
+    <node id="quatsch" />
+    <node id="fressen" />
+    <node id="scheiße" />
+    <node id="zwerg" />
+    <node id="wollt" />
+    <node id="wollte" />
+    <node id="sollen" />
+    <node id="suppe" />
+    <node id="sorry" />
+    <node id="stehen" />
+    <node id="schaut" />
+    <node id="ficken" />
+    <node id="arsch" />
+    <node id="kuh" />
+    <node id="flasche" />
+    <node id="wodka" />
+    <node id="pupsen" />
+    <node id="stinkt" />
+    <node id="pupse" />
+    <node id="nennt" />
+    <node id="gold" />
+    <node id="toilette" />
+    <node id="toiletten" />
+    <node id="verstopft" />
+    <node id="tritt" />
+    <node id="scheiß" />
+    <node id="fahren" />
+    <node id="auto" />
+    <node id="pappnase" />
+    <node id="jon" />
+    <node id="schnee" />
+    <node id="nennen" />
+    <node id="gulasch" />
+    <node id="hasen" />
+    <node id="hals" />
+    <node id="schatz" />
+    <node id="mac" />
+    <node id="gib" />
+    <node id="reicht" />
+    <node id="party" />
+    <node id="stehe" />
+    <node id="trete" />
+    <node id="darfst" />
+    <node id="stecke" />
+    <node id="fährt" />
+    <node id="bock" />
+    <node id="tee" />
+    <node id="donalds" />
+    <node id="schnaps" />
+    <node id="hol" />
+    <node id="papa" />
+    <node id="schlafen" />
+    <node id="arschloch" />
+    <node id="göre" />
+    <node id="pommes" />
+    <node id="milch" />
+    <node id="kaffee" />
+    <node id="kotzen" />
+    <node id="hose" />
+    <node id="aa" />
+    <node id="mach" />
+    <node id="spencer" />
+    <node id="wahhh" />
+    <node id="hackfleisch" />
+    <node id="samson" />
+    <node id="glaub" />
+    <node id="rufe" />
+    <node id="telefon" />
+    <node id="sagt" />
+    <node id="schädel" />
+    <node id="erweiterung" />
+    <node id="civilization" />
+    <node id="februar" />
+    <node id="pappnasen" />
+    <node id="nennst" />
+    <node id="problem" />
+    <node id="schau" />
+    <node id="grimes" />
+    <node id="rick" />
+    <node id="lege" />
+    <node id="ramme" />
+    <node id="laune" />
+    <node id="aldi" />
+    <node id="rück" />
+    <node id="salami" />
+    <node id="leitung" />
+    <node id="tschüss" />
+    <node id="steht" />
+    <node id="elmo" />
+    <node id="batman" />
+    <node id="robin" />
+    <node id="kekse" />
+    <node id="käse" />
+    <node id="ring" />
+    <node id="sauron" />
+    <node id="burger" />
+    <node id="cheese" />
+    <node id="durchfall" />
+    <node id="king" />
+    <node id="stinkst" />
+    <node id="harry" />
+    <node id="potter" />
+    <node id="obelix" />
+    <node id="behalte" />
+    <node id="lache" />
+    <node id="nerven" />
+    <node id="finde" />
+    <node id="bild" />
+    <node id="knallt" />
+    <node id="nase" />
+    <node id="bremen" />
+    <node id="freddy" />
+    <node id="krüger" />
+    <node id="bruder" />
+    <node id="fahre" />
+    <node id="lesen" />
+    <node id="clown" />
+    <node id="zeitung" />
+    <node id="boromir" />
+    <node id="tut" />
+    <node id="filme" />
+    <node id="horror" />
+    <node id="hamburg" />
+    <node id="altona" />
+    <node id="bachem" />
+    <node id="gathering" />
+    <node id="storm" />
+    <node id="steam" />
+    <node id="vi" />
+    <node id="elm" />
+    <node id="street" />
+    <node id="halten" />
+    <node id="linux" />
+    <node id="pech" />
+    <node id="geben" />
+    <node id="kommst" />
+    <node id="verpiss" />
+    <node id="monster" />
+    <node id="schauen" />
+    <node id="tolkien" />
+    <node id="abgesagt" />
+    <node id="finden" />
+    <node id="brauchen" />
+    <node id="macho" />
+    <node id="peitsche" />
+    <node id="nightmare" />
+    <node id="fliesentisch" />
+    <node id="magen" />
+    <node id="schlägt" />
+    <node id="menschen" />
+    <node id="kohl" />
+    <node id="pups" />
+    <node id="furze" />
+    <node id="furzen" />
+    <node id="korken" />
+    <node id="fernsehn" />
+    <node id="bohnen" />
+    <node id="angelina" />
+    <node id="jolie" />
+    <node id="lippen" />
+    <node id="zwergen" />
+    <node id="meyers" />
+    <node id="michael" />
+    <node id="topf" />
+    <node id="leprechaun" />
+    <node id="faktor" />
+    <node id="x" />
+    <node id="fichtel" />
+    <node id="lied" />
+    <node id="doctor" />
+    <node id="evil" />
+    <edge source="staffel" target="thrones">
+      <data key="d0">25</data>
+    </edge>
+    <edge source="staffel" target="game">
+      <data key="d0">25</data>
+    </edge>
+    <edge source="staffel" target="of">
+      <data key="d0">25</data>
+    </edge>
+    <edge source="thrones" target="sehen">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="thrones" target="will">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="thrones" target="game">
+      <data key="d0">68</data>
+    </edge>
+    <edge source="thrones" target="kann">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="thrones" target="schaue">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="thrones" target="of">
+      <data key="d0">66</data>
+    </edge>
+    <edge source="thrones" target="hey">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="thrones" target="könig">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="thrones" target="muss">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="thrones" target="kommt">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="thrones" target="scheiße">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="geh" target="hey">
+      <data key="d0">24</data>
+    </edge>
+    <edge source="geh" target="will">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="geh" target="muss">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="geh" target="bett">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="geh" target="pappnase">
+      <data key="d0">25</data>
+    </edge>
+    <edge source="geh" target="toilette">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="hey" target="of">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="hey" target="geschichte">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="hey" target="macht">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="hey" target="spielen">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="hey" target="game">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="hey" target="sag">
+      <data key="d0">51</data>
+    </edge>
+    <edge source="hey" target="kann">
+      <data key="d0">64</data>
+    </edge>
+    <edge source="hey" target="sollte">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="hey" target="schnauze">
+      <data key="d0">41</data>
+    </edge>
+    <edge source="hey" target="sehen">
+      <data key="d0">44</data>
+    </edge>
+    <edge source="hey" target="will">
+      <data key="d0">163</data>
+    </edge>
+    <edge source="hey" target="gott">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="hey" target="leute">
+      <data key="d0">78</data>
+    </edge>
+    <edge source="hey" target="herr">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="hey" target="wollen">
+      <data key="d0">60</data>
+    </edge>
+    <edge source="hey" target="willst">
+      <data key="d0">31</data>
+    </edge>
+    <edge source="hey" target="hör">
+      <data key="d0">27</data>
+    </edge>
+    <edge source="hey" target="bekommst">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="hey" target="hunger">
+      <data key="d0">29</data>
+    </edge>
+    <edge source="hey" target="gibt">
+      <data key="d0">73</data>
+    </edge>
+    <edge source="hey" target="könnt">
+      <data key="d0">26</data>
+    </edge>
+    <edge source="hey" target="fresse">
+      <data key="d0">42</data>
+    </edge>
+    <edge source="hey" target="bleibt">
+      <data key="d0">42</data>
+    </edge>
+    <edge source="hey" target="soll">
+      <data key="d0">59</data>
+    </edge>
+    <edge source="hey" target="new">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="hey" target="gehe">
+      <data key="d0">38</data>
+    </edge>
+    <edge source="hey" target="essen">
+      <data key="d0">58</data>
+    </edge>
+    <edge source="hey" target="orleans">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="hey" target="eier">
+      <data key="d0">57</data>
+    </edge>
+    <edge source="hey" target="hilfe">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="hey" target="hasse">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="hey" target="trinke">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="hey" target="tom">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="hey" target="geht">
+      <data key="d0">63</data>
+    </edge>
+    <edge source="hey" target="machen">
+      <data key="d0">58</data>
+    </edge>
+    <edge source="hey" target="kannst">
+      <data key="d0">21</data>
+    </edge>
+    <edge source="hey" target="kriege">
+      <data key="d0">32</data>
+    </edge>
+    <edge source="hey" target="frau">
+      <data key="d0">29</data>
+    </edge>
+    <edge source="hey" target="kinder">
+      <data key="d0">35</data>
+    </edge>
+    <edge source="hey" target="hört">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="hey" target="trinken">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="hey" target="kriegst">
+      <data key="d0">30</data>
+    </edge>
+    <edge source="hey" target="hole">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="hey" target="kaufen">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="hey" target="hören">
+      <data key="d0">31</data>
+    </edge>
+    <edge source="hey" target="krieg">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="hey" target="sagen">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="hey" target="vollpfosten">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="hey" target="spiegel">
+      <data key="d0">45</data>
+    </edge>
+    <edge source="hey" target="tisch">
+      <data key="d0">49</data>
+    </edge>
+    <edge source="hey" target="pizza">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="hey" target="wollt">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="hey" target="gehen">
+      <data key="d0">66</data>
+    </edge>
+    <edge source="hey" target="muss">
+      <data key="d0">51</data>
+    </edge>
+    <edge source="hey" target="stehen">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="hey" target="schaut">
+      <data key="d0">22</data>
+    </edge>
+    <edge source="hey" target="komme">
+      <data key="d0">38</data>
+    </edge>
+    <edge source="hey" target="komm">
+      <data key="d0">105</data>
+    </edge>
+    <edge source="hey" target="angst">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="hey" target="bleiben">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="hey" target="scheiße">
+      <data key="d0">55</data>
+    </edge>
+    <edge source="hey" target="warte">
+      <data key="d0">21</data>
+    </edge>
+    <edge source="hey" target="kerl">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="hey" target="bekommen">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="hey" target="haue">
+      <data key="d0">26</data>
+    </edge>
+    <edge source="hey" target="finger">
+      <data key="d0">33</data>
+    </edge>
+    <edge source="hey" target="arsch">
+      <data key="d0">80</data>
+    </edge>
+    <edge source="hey" target="kuh">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="hey" target="müssen">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="hey" target="bleib">
+      <data key="d0">22</data>
+    </edge>
+    <edge source="hey" target="kommt">
+      <data key="d0">50</data>
+    </edge>
+    <edge source="hey" target="nennt">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="hey" target="gold">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="hey" target="toilette">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="hey" target="fahren">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="hey" target="könig">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="hey" target="gulasch">
+      <data key="d0">55</data>
+    </edge>
+    <edge source="hey" target="hause">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="hey" target="pappnase">
+      <data key="d0">293</data>
+    </edge>
+    <edge source="hey" target="schatz">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="hey" target="mac">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="hey" target="gib">
+      <data key="d0">35</data>
+    </edge>
+    <edge source="hey" target="scheiß">
+      <data key="d0">41</data>
+    </edge>
+    <edge source="hey" target="stehe">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="hey" target="ok">
+      <data key="d0">25</data>
+    </edge>
+    <edge source="hey" target="wollte">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="hey" target="möchte">
+      <data key="d0">51</data>
+    </edge>
+    <edge source="hey" target="bett">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="hey" target="bock">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="hey" target="mache">
+      <data key="d0">56</data>
+    </edge>
+    <edge source="hey" target="sage">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="hey" target="schmecken">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="hey" target="papa">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="hey" target="ruhe">
+      <data key="d0">36</data>
+    </edge>
+    <edge source="hey" target="findet">
+      <data key="d0">25</data>
+    </edge>
+    <edge source="hey" target="kommen">
+      <data key="d0">31</data>
+    </edge>
+    <edge source="hey" target="party">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="hey" target="darf">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="hey" target="göre">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="hey" target="pommes">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="hey" target="fressen">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="hey" target="mach">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="hey" target="hackfleisch">
+      <data key="d0">35</data>
+    </edge>
+    <edge source="hey" target="spencer">
+      <data key="d0">90</data>
+    </edge>
+    <edge source="hey" target="quatsch">
+      <data key="d0">25</data>
+    </edge>
+    <edge source="hey" target="gegessen">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="hey" target="rufe">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="hey" target="telefon">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="hey" target="holen">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="hey" target="sagt">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="hey" target="mann">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="hey" target="civilization">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="hey" target="civ">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="hey" target="pappnasen">
+      <data key="d0">93</data>
+    </edge>
+    <edge source="hey" target="tee">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="hey" target="schau">
+      <data key="d0">26</data>
+    </edge>
+    <edge source="hey" target="kaffee">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="hey" target="lege">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="hey" target="bären">
+      <data key="d0">62</data>
+    </edge>
+    <edge source="hey" target="esse">
+      <data key="d0">35</data>
+    </edge>
+    <edge source="hey" target="arschloch">
+      <data key="d0">25</data>
+    </edge>
+    <edge source="hey" target="rück">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="hey" target="sorry">
+      <data key="d0">31</data>
+    </edge>
+    <edge source="hey" target="hol">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="hey" target="tschüss">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="hey" target="elmo">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="hey" target="ring">
+      <data key="d0">21</data>
+    </edge>
+    <edge source="hey" target="burger">
+      <data key="d0">41</data>
+    </edge>
+    <edge source="hey" target="donalds">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="hey" target="hose">
+      <data key="d0">24</data>
+    </edge>
+    <edge source="hey" target="cheese">
+      <data key="d0">36</data>
+    </edge>
+    <edge source="hey" target="pupsen">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="hey" target="können">
+      <data key="d0">22</data>
+    </edge>
+    <edge source="hey" target="stammtisch">
+      <data key="d0">28</data>
+    </edge>
+    <edge source="hey" target="zwerg">
+      <data key="d0">30</data>
+    </edge>
+    <edge source="hey" target="krüger">
+      <data key="d0">24</data>
+    </edge>
+    <edge source="hey" target="freddy">
+      <data key="d0">29</data>
+    </edge>
+    <edge source="hey" target="bruder">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="hey" target="stinkt">
+      <data key="d0">22</data>
+    </edge>
+    <edge source="hey" target="fahre">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="hey" target="clown">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="hey" target="knallt">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="hey" target="boromir">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="hey" target="bremen">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="hey" target="gathering">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="hey" target="storm">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="hey" target="geben">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="hey" target="verpiss">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="hey" target="schauen">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="hey" target="tolkien">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="hey" target="schmeckt">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="hey" target="suppe">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="hey" target="kohl">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="sehen" target="will">
+      <data key="d0">52</data>
+    </edge>
+    <edge source="sehen" target="kann">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="sehen" target="of">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="sehen" target="game">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="sehen" target="schnauze">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="sehen" target="sag">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="sehen" target="eier">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="sehen" target="muss">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="sehen" target="kommt">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="sehen" target="ruhe">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="sehen" target="komme">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="sehen" target="mache">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="sehen" target="geht">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="sehen" target="leute">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="sehen" target="kinder">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="sehen" target="wollen">
+      <data key="d0">39</data>
+    </edge>
+    <edge source="sehen" target="essen">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="sehen" target="komm">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="sehen" target="arsch">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="sehen" target="möchte">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="sehen" target="gehen">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="sehen" target="pappnase">
+      <data key="d0">42</data>
+    </edge>
+    <edge source="sehen" target="machen">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="sehen" target="zwerg">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="sehen" target="freddy">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="of" target="schaue">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="of" target="kann">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="of" target="serie">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="of" target="game">
+      <data key="d0">66</data>
+    </edge>
+    <edge source="of" target="will">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="of" target="könig">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="of" target="muss">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="of" target="kommt">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="of" target="scheiße">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="game" target="schaue">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="game" target="kann">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="game" target="will">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="game" target="könig">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="game" target="muss">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="game" target="kommt">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="game" target="scheiße">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="game" target="pappnase">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="geschichte" target="will">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="kann" target="macht">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="kann" target="spielen">
+      <data key="d0">30</data>
+    </edge>
+    <edge source="kann" target="sag">
+      <data key="d0">28</data>
+    </edge>
+    <edge source="kann" target="schnauze">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="kann" target="will">
+      <data key="d0">39</data>
+    </edge>
+    <edge source="kann" target="bleib">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="kann" target="hause">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="kann" target="sehe">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="kann" target="muss">
+      <data key="d0">38</data>
+    </edge>
+    <edge source="kann" target="kommt">
+      <data key="d0">25</data>
+    </edge>
+    <edge source="kann" target="machen">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="kann" target="kommen">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="kann" target="gibt">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="kann" target="essen">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="kann" target="komme">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="kann" target="hören">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="kann" target="geht">
+      <data key="d0">21</data>
+    </edge>
+    <edge source="kann" target="eier">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="kann" target="ruhe">
+      <data key="d0">40</data>
+    </edge>
+    <edge source="kann" target="gehe">
+      <data key="d0">21</data>
+    </edge>
+    <edge source="kann" target="komm">
+      <data key="d0">26</data>
+    </edge>
+    <edge source="kann" target="schaut">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="kann" target="sagen">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="kann" target="gehen">
+      <data key="d0">33</data>
+    </edge>
+    <edge source="kann" target="darf">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="kann" target="möchte">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="kann" target="schlafen">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="kann" target="arschloch">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="kann" target="leute">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="kann" target="fahren">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="kann" target="mache">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="kann" target="fresse">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="kann" target="bären">
+      <data key="d0">25</data>
+    </edge>
+    <edge source="kann" target="spencer">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="kann" target="civ">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="kann" target="pappnase">
+      <data key="d0">61</data>
+    </edge>
+    <edge source="kann" target="sorry">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="kann" target="verstopft">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="kann" target="scheiße">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="kann" target="arsch">
+      <data key="d0">21</data>
+    </edge>
+    <edge source="kann" target="kinder">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="kann" target="scheiß">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="kann" target="stinkt">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="kann" target="bremen">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="kann" target="freddy">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="kann" target="krüger">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="kann" target="pappnasen">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="kann" target="tisch">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="kann" target="hose">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="kann" target="toilette">
+      <data key="d0">22</data>
+    </edge>
+    <edge source="kann" target="gulasch">
+      <data key="d0">29</data>
+    </edge>
+    <edge source="macht" target="will">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="macht" target="angst">
+      <data key="d0">25</data>
+    </edge>
+    <edge source="macht" target="muss">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="macht" target="mache">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="macht" target="machen">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="macht" target="komm">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="macht" target="pappnase">
+      <data key="d0">24</data>
+    </edge>
+    <edge source="macht" target="pappnasen">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="will" target="schnauze">
+      <data key="d0">36</data>
+    </edge>
+    <edge source="will" target="sag">
+      <data key="d0">37</data>
+    </edge>
+    <edge source="will" target="spielen">
+      <data key="d0">30</data>
+    </edge>
+    <edge source="will" target="geld">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="will" target="herr">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="will" target="wollen">
+      <data key="d0">37</data>
+    </edge>
+    <edge source="will" target="leute">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="will" target="willst">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="will" target="bekommst">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="will" target="tun">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="will" target="könnt">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="will" target="hör">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="will" target="gibt">
+      <data key="d0">52</data>
+    </edge>
+    <edge source="will" target="hunger">
+      <data key="d0">29</data>
+    </edge>
+    <edge source="will" target="bier">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="will" target="gehen">
+      <data key="d0">38</data>
+    </edge>
+    <edge source="will" target="muss">
+      <data key="d0">32</data>
+    </edge>
+    <edge source="will" target="trinken">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="will" target="gehe">
+      <data key="d0">33</data>
+    </edge>
+    <edge source="will" target="fresse">
+      <data key="d0">22</data>
+    </edge>
+    <edge source="will" target="civ">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="will" target="hören">
+      <data key="d0">34</data>
+    </edge>
+    <edge source="will" target="eier">
+      <data key="d0">45</data>
+    </edge>
+    <edge source="will" target="bleibt">
+      <data key="d0">28</data>
+    </edge>
+    <edge source="will" target="können">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="will" target="kriegst">
+      <data key="d0">29</data>
+    </edge>
+    <edge source="will" target="spiegel">
+      <data key="d0">42</data>
+    </edge>
+    <edge source="will" target="tisch">
+      <data key="d0">29</data>
+    </edge>
+    <edge source="will" target="ruhe">
+      <data key="d0">25</data>
+    </edge>
+    <edge source="will" target="bleiben">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="will" target="kriege">
+      <data key="d0">24</data>
+    </edge>
+    <edge source="will" target="möchte">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="will" target="esse">
+      <data key="d0">32</data>
+    </edge>
+    <edge source="will" target="pizza">
+      <data key="d0">26</data>
+    </edge>
+    <edge source="will" target="kinder">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="will" target="geht">
+      <data key="d0">38</data>
+    </edge>
+    <edge source="will" target="wings">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="will" target="hot">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="will" target="essen">
+      <data key="d0">39</data>
+    </edge>
+    <edge source="will" target="soll">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="will" target="mache">
+      <data key="d0">24</data>
+    </edge>
+    <edge source="will" target="machen">
+      <data key="d0">34</data>
+    </edge>
+    <edge source="will" target="hasse">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="will" target="bekommen">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="will" target="müssen">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="will" target="finger">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="will" target="darf">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="will" target="ok">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="will" target="mann">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="will" target="komme">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="will" target="sage">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="will" target="kommt">
+      <data key="d0">37</data>
+    </edge>
+    <edge source="will" target="kannst">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="will" target="kaufen">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="will" target="kerl">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="will" target="haue">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="will" target="sagen">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="will" target="fressen">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="will" target="komm">
+      <data key="d0">43</data>
+    </edge>
+    <edge source="will" target="scheiße">
+      <data key="d0">38</data>
+    </edge>
+    <edge source="will" target="zwerg">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="will" target="ficken">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="will" target="arsch">
+      <data key="d0">46</data>
+    </edge>
+    <edge source="will" target="stinkt">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="will" target="scheiß">
+      <data key="d0">25</data>
+    </edge>
+    <edge source="will" target="mac">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="will" target="gib">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="will" target="fahren">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="will" target="gold">
+      <data key="d0">21</data>
+    </edge>
+    <edge source="will" target="göre">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="will" target="pappnase">
+      <data key="d0">115</data>
+    </edge>
+    <edge source="will" target="wahhh">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="will" target="hilfe">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="will" target="hackfleisch">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="will" target="quatsch">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="will" target="spencer">
+      <data key="d0">28</data>
+    </edge>
+    <edge source="will" target="kommen">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="will" target="aldi">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="will" target="sorry">
+      <data key="d0">22</data>
+    </edge>
+    <edge source="will" target="hol">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="will" target="tschüss">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="will" target="ring">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="will" target="pappnasen">
+      <data key="d0">27</data>
+    </edge>
+    <edge source="will" target="burger">
+      <data key="d0">47</data>
+    </edge>
+    <edge source="will" target="cheese">
+      <data key="d0">44</data>
+    </edge>
+    <edge source="will" target="bären">
+      <data key="d0">50</data>
+    </edge>
+    <edge source="will" target="krüger">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="will" target="freddy">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="will" target="arschloch">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="will" target="bremen">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="will" target="storm">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="will" target="gathering">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="will" target="gulasch">
+      <data key="d0">46</data>
+    </edge>
+    <edge source="will" target="suppe">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="will" target="kohl">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="will" target="leprechaun">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="spielen" target="muss">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="spielen" target="komm">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="spielen" target="möchte">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="spielen" target="pappnase">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="spielen" target="erweiterung">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="spielen" target="civ">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="spielen" target="februar">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="spielen" target="kommt">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="spielen" target="steam">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="spielen" target="storm">
+      <data key="d0">27</data>
+    </edge>
+    <edge source="spielen" target="gathering">
+      <data key="d0">27</data>
+    </edge>
+    <edge source="spielen" target="civilization">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="spielen" target="wollen">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="spielen" target="kinder">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="schnauze" target="spencer">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="schnauze" target="pappnase">
+      <data key="d0">73</data>
+    </edge>
+    <edge source="schnauze" target="pappnasen">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="schnauze" target="esse">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="schnauze" target="gibt">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="schnauze" target="bären">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="schnauze" target="vollpfosten">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="schnauze" target="arsch">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="schnauze" target="soll">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="schnauze" target="mache">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="schnauze" target="kommt">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="schnauze" target="cheese">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="schnauze" target="göre">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="schnauze" target="burger">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="schnauze" target="machen">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="schnauze" target="arschloch">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="schnauze" target="komm">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="schnauze" target="fresse">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="schnauze" target="scheiß">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="schnauze" target="scheiße">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="schnauze" target="halten">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="schnauze" target="hackfleisch">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="schnauze" target="essen">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="schnauze" target="gulasch">
+      <data key="d0">25</data>
+    </edge>
+    <edge source="schnauze" target="zwerg">
+      <data key="d0">21</data>
+    </edge>
+    <edge source="sag" target="bleibt">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="sag" target="hör">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="sag" target="muss">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="sag" target="mache">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="sag" target="soll">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="sag" target="scheiße">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="sag" target="willst">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="sag" target="geht">
+      <data key="d0">46</data>
+    </edge>
+    <edge source="sag" target="komm">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="sag" target="gehen">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="sag" target="stinkt">
+      <data key="d0">24</data>
+    </edge>
+    <edge source="sag" target="ruhe">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="sag" target="hören">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="sag" target="pappnase">
+      <data key="d0">71</data>
+    </edge>
+    <edge source="sag" target="gulasch">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="sag" target="gibt">
+      <data key="d0">21</data>
+    </edge>
+    <edge source="sag" target="arsch">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="sag" target="pappnasen">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="sag" target="spencer">
+      <data key="d0">26</data>
+    </edge>
+    <edge source="sag" target="essen">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="sag" target="eier">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="sag" target="bären">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="sag" target="kommt">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="sag" target="hose">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="sag" target="burger">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="sag" target="machen">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="sag" target="sorry">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="sag" target="gehe">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="sag" target="toilette">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="geld" target="pappnase">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="sollte" target="pappnase">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="leute" target="wollen">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="leute" target="muss">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="leute" target="essen">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="leute" target="eier">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="leute" target="geht">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="leute" target="kommt">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="leute" target="scheiße">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="leute" target="gehen">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="leute" target="gibt">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="leute" target="spencer">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="leute" target="spiegel">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="leute" target="pappnase">
+      <data key="d0">28</data>
+    </edge>
+    <edge source="leute" target="bären">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="leute" target="machen">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="leute" target="sorry">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="leute" target="gulasch">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="juliette" target="silverton">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="herr" target="pappnase">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="wollen" target="können">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="wollen" target="spiegel">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="wollen" target="tisch">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="wollen" target="muss">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="wollen" target="eier">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="wollen" target="kinder">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="wollen" target="mache">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="wollen" target="ruhe">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="wollen" target="essen">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="wollen" target="suppe">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="wollen" target="gehen">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="wollen" target="machen">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="wollen" target="spencer">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="wollen" target="geht">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="wollen" target="pappnase">
+      <data key="d0">41</data>
+    </edge>
+    <edge source="wollen" target="komm">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="wollen" target="arsch">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="wollen" target="gibt">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="wollen" target="pappnasen">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="wollen" target="zwerg">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="wollen" target="bären">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="wollen" target="kohl">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="willst" target="fresse">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="willst" target="machen">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="willst" target="komm">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="willst" target="pappnase">
+      <data key="d0">26</data>
+    </edge>
+    <edge source="finger" target="kriege">
+      <data key="d0">27</data>
+    </edge>
+    <edge source="finger" target="warte">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="finger" target="komm">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="finger" target="arsch">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="finger" target="pappnase">
+      <data key="d0">31</data>
+    </edge>
+    <edge source="finger" target="mache">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="finger" target="hackfleisch">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="kriege" target="warte">
+      <data key="d0">29</data>
+    </edge>
+    <edge source="kriege" target="kriegst">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="kriege" target="muss">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="kriege" target="hunger">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="kriege" target="esse">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="kriege" target="pizza">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="kriege" target="arsch">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="kriege" target="scheiße">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="kriege" target="pappnase">
+      <data key="d0">37</data>
+    </edge>
+    <edge source="kriege" target="machen">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="kriege" target="mache">
+      <data key="d0">29</data>
+    </edge>
+    <edge source="kriege" target="hackfleisch">
+      <data key="d0">27</data>
+    </edge>
+    <edge source="kriege" target="komm">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="kriege" target="essen">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="kriege" target="bären">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="kriege" target="gulasch">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="warte" target="komm">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="warte" target="pappnase">
+      <data key="d0">22</data>
+    </edge>
+    <edge source="warte" target="mache">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="warte" target="hackfleisch">
+      <data key="d0">22</data>
+    </edge>
+    <edge source="warte" target="zwerg">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="dead" target="walking">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="dead" target="the">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="walking" target="the">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="hör" target="gibt">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="hör" target="muss">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="hör" target="pappnase">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="bekommst" target="pappnase">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="hunger" target="gibt">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="hunger" target="spiegel">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="hunger" target="eier">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="hunger" target="essen">
+      <data key="d0">21</data>
+    </edge>
+    <edge source="hunger" target="bleibt">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="hunger" target="esse">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="hunger" target="fressen">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="hunger" target="pizza">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="hunger" target="gulasch">
+      <data key="d0">28</data>
+    </edge>
+    <edge source="hunger" target="pappnase">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="hunger" target="bären">
+      <data key="d0">27</data>
+    </edge>
+    <edge source="hunger" target="cheese">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="hunger" target="burger">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="gibt" target="gehe">
+      <data key="d0">28</data>
+    </edge>
+    <edge source="gibt" target="fresse">
+      <data key="d0">26</data>
+    </edge>
+    <edge source="gibt" target="muss">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="gibt" target="gehen">
+      <data key="d0">21</data>
+    </edge>
+    <edge source="gibt" target="geht">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="gibt" target="komme">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="gibt" target="kommt">
+      <data key="d0">22</data>
+    </edge>
+    <edge source="gibt" target="komm">
+      <data key="d0">32</data>
+    </edge>
+    <edge source="gibt" target="arsch">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="gibt" target="scheiße">
+      <data key="d0">24</data>
+    </edge>
+    <edge source="gibt" target="stinkt">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="gibt" target="gulasch">
+      <data key="d0">92</data>
+    </edge>
+    <edge source="gibt" target="pappnase">
+      <data key="d0">83</data>
+    </edge>
+    <edge source="gibt" target="mac">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="gibt" target="esse">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="gibt" target="bleibt">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="gibt" target="mache">
+      <data key="d0">22</data>
+    </edge>
+    <edge source="gibt" target="donalds">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="gibt" target="pappnasen">
+      <data key="d0">34</data>
+    </edge>
+    <edge source="gibt" target="kinder">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="gibt" target="scheiß">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="gibt" target="bären">
+      <data key="d0">75</data>
+    </edge>
+    <edge source="gibt" target="machen">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="gibt" target="möchte">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="gibt" target="sorry">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="gibt" target="essen">
+      <data key="d0">41</data>
+    </edge>
+    <edge source="gibt" target="burger">
+      <data key="d0">25</data>
+    </edge>
+    <edge source="gibt" target="cheese">
+      <data key="d0">25</data>
+    </edge>
+    <edge source="gibt" target="vollpfosten">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="gibt" target="eier">
+      <data key="d0">49</data>
+    </edge>
+    <edge source="gibt" target="spiegel">
+      <data key="d0">43</data>
+    </edge>
+    <edge source="gibt" target="frühstück">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="gibt" target="tisch">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="gibt" target="kriegst">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="gibt" target="aldi">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="gibt" target="fliesentisch">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="gibt" target="schmeckt">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="gibt" target="kohl">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="gibt" target="suppe">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="gibt" target="pizza">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="könnt" target="pappnasen">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="könnt" target="arsch">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="könnt" target="pappnase">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="kriegst" target="eier">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="kriegst" target="spiegel">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="kriegst" target="fresse">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="kriegst" target="möchte">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="kriegst" target="pappnase">
+      <data key="d0">35</data>
+    </edge>
+    <edge source="kriegst" target="arsch">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="kriegst" target="esse">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="kriegst" target="burger">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="kriegst" target="cheese">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="kriegst" target="komm">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="kriegst" target="bären">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="kriegst" target="gulasch">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="gehe" target="gehen">
+      <data key="d0">26</data>
+    </edge>
+    <edge source="gehe" target="muss">
+      <data key="d0">24</data>
+    </edge>
+    <edge source="gehe" target="essen">
+      <data key="d0">37</data>
+    </edge>
+    <edge source="gehe" target="pizza">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="gehe" target="möchte">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="gehe" target="komm">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="gehe" target="komme">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="gehe" target="scheiße">
+      <data key="d0">30</data>
+    </edge>
+    <edge source="gehe" target="mac">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="gehe" target="arsch">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="gehe" target="donalds">
+      <data key="d0">22</data>
+    </edge>
+    <edge source="gehe" target="esse">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="gehe" target="hose">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="gehe" target="mache">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="gehe" target="pappnase">
+      <data key="d0">51</data>
+    </edge>
+    <edge source="gehe" target="aldi">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="gehe" target="tschüss">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="gehe" target="cheese">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="gehe" target="burger">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="gehe" target="bären">
+      <data key="d0">26</data>
+    </edge>
+    <edge source="gehe" target="sorry">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="gehe" target="stinkt">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="gehe" target="toilette">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="gehe" target="tisch">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="gehe" target="eier">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="gehe" target="gulasch">
+      <data key="d0">33</data>
+    </edge>
+    <edge source="fresse" target="haue">
+      <data key="d0">24</data>
+    </edge>
+    <edge source="fresse" target="komm">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="fresse" target="geht">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="fresse" target="kommt">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="fresse" target="komme">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="fresse" target="pappnase">
+      <data key="d0">39</data>
+    </edge>
+    <edge source="fresse" target="pappnasen">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="fresse" target="fressen">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="fresse" target="bären">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="fresse" target="cheese">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="fresse" target="burger">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="fresse" target="monster">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="fresse" target="gulasch">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="bier" target="trinke">
+      <data key="d0">21</data>
+    </edge>
+    <edge source="muss" target="gehen">
+      <data key="d0">32</data>
+    </edge>
+    <edge source="muss" target="hören">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="muss" target="arbeit">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="muss" target="machen">
+      <data key="d0">34</data>
+    </edge>
+    <edge source="muss" target="können">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="muss" target="tisch">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="muss" target="spiegel">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="muss" target="eier">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="muss" target="bleibt">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="muss" target="ruhe">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="muss" target="esse">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="muss" target="kommt">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="muss" target="darf">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="muss" target="geht">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="muss" target="mache">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="muss" target="essen">
+      <data key="d0">22</data>
+    </edge>
+    <edge source="muss" target="schmeckt">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="muss" target="komm">
+      <data key="d0">21</data>
+    </edge>
+    <edge source="muss" target="pupsen">
+      <data key="d0">26</data>
+    </edge>
+    <edge source="muss" target="stinkt">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="muss" target="arsch">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="muss" target="kotzen">
+      <data key="d0">31</data>
+    </edge>
+    <edge source="muss" target="scheiße">
+      <data key="d0">29</data>
+    </edge>
+    <edge source="muss" target="hose">
+      <data key="d0">26</data>
+    </edge>
+    <edge source="muss" target="spencer">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="muss" target="glaub">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="muss" target="aldi">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="muss" target="pappnase">
+      <data key="d0">34</data>
+    </edge>
+    <edge source="muss" target="sorry">
+      <data key="d0">25</data>
+    </edge>
+    <edge source="muss" target="kommen">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="muss" target="bären">
+      <data key="d0">30</data>
+    </edge>
+    <edge source="muss" target="toilette">
+      <data key="d0">46</data>
+    </edge>
+    <edge source="muss" target="gulasch">
+      <data key="d0">27</data>
+    </edge>
+    <edge source="muss" target="verstopft">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="muss" target="furzen">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="gehen" target="scheiße">
+      <data key="d0">26</data>
+    </edge>
+    <edge source="gehen" target="komm">
+      <data key="d0">22</data>
+    </edge>
+    <edge source="gehen" target="geht">
+      <data key="d0">25</data>
+    </edge>
+    <edge source="gehen" target="machen">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="gehen" target="arsch">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="gehen" target="soll">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="gehen" target="essen">
+      <data key="d0">35</data>
+    </edge>
+    <edge source="gehen" target="mache">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="gehen" target="hause">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="gehen" target="ruhe">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="gehen" target="kommen">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="gehen" target="spencer">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="gehen" target="tee">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="gehen" target="pappnase">
+      <data key="d0">59</data>
+    </edge>
+    <edge source="gehen" target="sorry">
+      <data key="d0">28</data>
+    </edge>
+    <edge source="gehen" target="leitung">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="gehen" target="pappnasen">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="gehen" target="stammtisch">
+      <data key="d0">24</data>
+    </edge>
+    <edge source="gehen" target="kommt">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="gehen" target="müssen">
+      <data key="d0">21</data>
+    </edge>
+    <edge source="gehen" target="hose">
+      <data key="d0">25</data>
+    </edge>
+    <edge source="gehen" target="freddy">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="gehen" target="können">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="gehen" target="bremen">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="gehen" target="stinkt">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="gehen" target="toilette">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="gehen" target="donalds">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="gehen" target="mac">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="gehen" target="tisch">
+      <data key="d0">36</data>
+    </edge>
+    <edge source="gehen" target="findet">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="gehen" target="eier">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="gehen" target="bären">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="gehen" target="gulasch">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="trinken" target="pappnase">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="hören" target="geht">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="hören" target="spencer">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="hören" target="arsch">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="hören" target="pappnase">
+      <data key="d0">39</data>
+    </edge>
+    <edge source="hören" target="pupsen">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="hören" target="stinkt">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="civ" target="erweiterung">
+      <data key="d0">22</data>
+    </edge>
+    <edge source="civ" target="pappnase">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="civ" target="linux">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="machen" target="können">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="machen" target="essen">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="machen" target="soll">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="machen" target="kommen">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="machen" target="komme">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="machen" target="mache">
+      <data key="d0">26</data>
+    </edge>
+    <edge source="machen" target="kannst">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="machen" target="geht">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="machen" target="scheiße">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="machen" target="hose">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="machen" target="haue">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="machen" target="arschloch">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="machen" target="hackfleisch">
+      <data key="d0">29</data>
+    </edge>
+    <edge source="machen" target="arsch">
+      <data key="d0">21</data>
+    </edge>
+    <edge source="machen" target="spencer">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="machen" target="komm">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="machen" target="pappnasen">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="machen" target="pappnase">
+      <data key="d0">46</data>
+    </edge>
+    <edge source="machen" target="bären">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="machen" target="esse">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="machen" target="gulasch">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="machen" target="krüger">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="machen" target="freddy">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="machen" target="toilette">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="bleib" target="pappnase">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="hause" target="komm">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="hause" target="pappnase">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="hause" target="bremen">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="eier" target="frühstück">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="eier" target="fliesen">
+      <data key="d0">41</data>
+    </edge>
+    <edge source="eier" target="tisch">
+      <data key="d0">50</data>
+    </edge>
+    <edge source="eier" target="spiegel">
+      <data key="d0">233</data>
+    </edge>
+    <edge source="eier" target="mache">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="eier" target="schmeckt">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="eier" target="bleiben">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="eier" target="essen">
+      <data key="d0">40</data>
+    </edge>
+    <edge source="eier" target="esse">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="eier" target="geht">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="eier" target="komm">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="eier" target="pizza">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="eier" target="gegessen">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="eier" target="schmecken">
+      <data key="d0">56</data>
+    </edge>
+    <edge source="eier" target="möchte">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="eier" target="pappnase">
+      <data key="d0">43</data>
+    </edge>
+    <edge source="eier" target="spencer">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="eier" target="sorry">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="eier" target="bären">
+      <data key="d0">53</data>
+    </edge>
+    <edge source="eier" target="pappnasen">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="eier" target="müssen">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="eier" target="kaufen">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="eier" target="aldi">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="eier" target="fliesentisch">
+      <data key="d0">67</data>
+    </edge>
+    <edge source="eier" target="gulasch">
+      <data key="d0">56</data>
+    </edge>
+    <edge source="frühstück" target="spiegel">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="fliesen" target="spiegel">
+      <data key="d0">36</data>
+    </edge>
+    <edge source="fliesen" target="tisch">
+      <data key="d0">44</data>
+    </edge>
+    <edge source="fliesen" target="schmecken">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="spiegel" target="tisch">
+      <data key="d0">45</data>
+    </edge>
+    <edge source="spiegel" target="schmeckt">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="spiegel" target="bleiben">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="spiegel" target="essen">
+      <data key="d0">36</data>
+    </edge>
+    <edge source="spiegel" target="esse">
+      <data key="d0">22</data>
+    </edge>
+    <edge source="spiegel" target="komm">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="spiegel" target="gegessen">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="spiegel" target="schmecken">
+      <data key="d0">51</data>
+    </edge>
+    <edge source="spiegel" target="pappnase">
+      <data key="d0">36</data>
+    </edge>
+    <edge source="spiegel" target="möchte">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="spiegel" target="sorry">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="spiegel" target="bären">
+      <data key="d0">51</data>
+    </edge>
+    <edge source="spiegel" target="pappnasen">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="spiegel" target="aldi">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="spiegel" target="fliesentisch">
+      <data key="d0">66</data>
+    </edge>
+    <edge source="spiegel" target="gulasch">
+      <data key="d0">55</data>
+    </edge>
+    <edge source="tisch" target="können">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="tisch" target="komm">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="tisch" target="esse">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="tisch" target="geht">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="tisch" target="orleans">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="tisch" target="new">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="tisch" target="schmecken">
+      <data key="d0">24</data>
+    </edge>
+    <edge source="tisch" target="soll">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="tisch" target="essen">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="tisch" target="bären">
+      <data key="d0">28</data>
+    </edge>
+    <edge source="tisch" target="tee">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="tisch" target="party">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="tisch" target="stammtisch">
+      <data key="d0">61</data>
+    </edge>
+    <edge source="tisch" target="pappnase">
+      <data key="d0">43</data>
+    </edge>
+    <edge source="tisch" target="tolkien">
+      <data key="d0">32</data>
+    </edge>
+    <edge source="tisch" target="scheiße">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="tisch" target="finden">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="tisch" target="sorry">
+      <data key="d0">36</data>
+    </edge>
+    <edge source="tisch" target="pappnasen">
+      <data key="d0">29</data>
+    </edge>
+    <edge source="tisch" target="kommt">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="tisch" target="müssen">
+      <data key="d0">22</data>
+    </edge>
+    <edge source="tisch" target="findet">
+      <data key="d0">45</data>
+    </edge>
+    <edge source="tisch" target="brauchen">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="tisch" target="gulasch">
+      <data key="d0">28</data>
+    </edge>
+    <edge source="bleibt" target="pizza">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="bleibt" target="geht">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="bleibt" target="essen">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="bleibt" target="kaffee">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="bleibt" target="pappnase">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="bleibt" target="sorry">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="bleibt" target="cheese">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="bleibt" target="burger">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="bleibt" target="bären">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="bleibt" target="gulasch">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="können" target="essen">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="können" target="sorry">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="können" target="pappnase">
+      <data key="d0">27</data>
+    </edge>
+    <edge source="können" target="arsch">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="können" target="stammtisch">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="ruhe" target="essen">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="ruhe" target="komm">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="ruhe" target="möchte">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="ruhe" target="pappnase">
+      <data key="d0">22</data>
+    </edge>
+    <edge source="ruhe" target="lesen">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="mache" target="komme">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="mache" target="kommt">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="mache" target="geht">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="mache" target="pappnase">
+      <data key="d0">90</data>
+    </edge>
+    <edge source="mache" target="hasen">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="mache" target="gulasch">
+      <data key="d0">44</data>
+    </edge>
+    <edge source="mache" target="scheiße">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="mache" target="hose">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="mache" target="spencer">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="mache" target="arsch">
+      <data key="d0">32</data>
+    </edge>
+    <edge source="mache" target="pappnasen">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="mache" target="bären">
+      <data key="d0">24</data>
+    </edge>
+    <edge source="mache" target="scheiß">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="mache" target="komm">
+      <data key="d0">27</data>
+    </edge>
+    <edge source="mache" target="verstopft">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="mache" target="cheese">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="mache" target="toilette">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="mache" target="burger">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="mache" target="esse">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="mache" target="kannst">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="mache" target="hackfleisch">
+      <data key="d0">95</data>
+    </edge>
+    <edge source="mache" target="krüger">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="mache" target="freddy">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="mache" target="zwerg">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="mache" target="essen">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="schmeckt" target="esse">
+      <data key="d0">24</data>
+    </edge>
+    <edge source="schmeckt" target="kotzen">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="schmeckt" target="scheiße">
+      <data key="d0">25</data>
+    </edge>
+    <edge source="schmeckt" target="pappnase">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="schmeckt" target="bären">
+      <data key="d0">60</data>
+    </edge>
+    <edge source="schmeckt" target="essen">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="schmeckt" target="gulasch">
+      <data key="d0">52</data>
+    </edge>
+    <edge source="schmeckt" target="kohl">
+      <data key="d0">22</data>
+    </edge>
+    <edge source="schmeckt" target="suppe">
+      <data key="d0">22</data>
+    </edge>
+    <edge source="bleiben" target="cheese">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="bleiben" target="burger">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="bleiben" target="stehen">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="essen" target="kommt">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="essen" target="schmecken">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="essen" target="esse">
+      <data key="d0">22</data>
+    </edge>
+    <edge source="essen" target="wollte">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="essen" target="kommen">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="essen" target="sollen">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="essen" target="suppe">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="essen" target="pizza">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="essen" target="komm">
+      <data key="d0">22</data>
+    </edge>
+    <edge source="essen" target="möchte">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="essen" target="scheiße">
+      <data key="d0">27</data>
+    </edge>
+    <edge source="essen" target="mac">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="essen" target="pappnasen">
+      <data key="d0">22</data>
+    </edge>
+    <edge source="essen" target="pappnase">
+      <data key="d0">46</data>
+    </edge>
+    <edge source="essen" target="burger">
+      <data key="d0">21</data>
+    </edge>
+    <edge source="essen" target="cheese">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="essen" target="arsch">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="essen" target="geht">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="essen" target="sorry">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="essen" target="donalds">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="essen" target="gegessen">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="essen" target="bären">
+      <data key="d0">60</data>
+    </edge>
+    <edge source="essen" target="gulasch">
+      <data key="d0">63</data>
+    </edge>
+    <edge source="essen" target="fliesentisch">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="essen" target="kohl">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="hilfe" target="kommen">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="hilfe" target="fressen">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="kommen" target="pappnase">
+      <data key="d0">21</data>
+    </edge>
+    <edge source="möchte" target="geht">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="möchte" target="komm">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="möchte" target="kommt">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="möchte" target="komme">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="möchte" target="arsch">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="möchte" target="bären">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="möchte" target="pappnase">
+      <data key="d0">41</data>
+    </edge>
+    <edge source="möchte" target="gulasch">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="komm" target="geht">
+      <data key="d0">21</data>
+    </edge>
+    <edge source="komm" target="scheiße">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="komm" target="zwerg">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="komm" target="kommt">
+      <data key="d0">24</data>
+    </edge>
+    <edge source="komm" target="komme">
+      <data key="d0">33</data>
+    </edge>
+    <edge source="komm" target="arsch">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="komm" target="pappnase">
+      <data key="d0">78</data>
+    </edge>
+    <edge source="komm" target="gulasch">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="komm" target="hol">
+      <data key="d0">24</data>
+    </edge>
+    <edge source="komm" target="arschloch">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="komm" target="spencer">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="komm" target="vollpfosten">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="komm" target="holen">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="komm" target="pappnasen">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="komm" target="cheese">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="komm" target="burger">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="komm" target="freddy">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="komm" target="hackfleisch">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="komm" target="müssen">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="komm" target="gib">
+      <data key="d0">21</data>
+    </edge>
+    <edge source="komm" target="bären">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="esse" target="schmecken">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="esse" target="pizza">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="esse" target="bären">
+      <data key="d0">61</data>
+    </edge>
+    <edge source="esse" target="scheiß">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="esse" target="pappnase">
+      <data key="d0">40</data>
+    </edge>
+    <edge source="esse" target="pappnasen">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="esse" target="kekse">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="esse" target="burger">
+      <data key="d0">29</data>
+    </edge>
+    <edge source="esse" target="cheese">
+      <data key="d0">28</data>
+    </edge>
+    <edge source="esse" target="gulasch">
+      <data key="d0">58</data>
+    </edge>
+    <edge source="esse" target="arschloch">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="esse" target="scheiße">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="esse" target="bohnen">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="esse" target="stinkt">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="trinke" target="tee">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="trinke" target="schnaps">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="trinke" target="milch">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="trinke" target="kaffee">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="geht" target="kommt">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="geht" target="komme">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="geht" target="soll">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="geht" target="scheiße">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="geht" target="arsch">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="geht" target="bären">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="geht" target="pappnasen">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="geht" target="pappnase">
+      <data key="d0">49</data>
+    </edge>
+    <edge source="geht" target="spencer">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="geht" target="burger">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="geht" target="cheese">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="geht" target="bremen">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="pizza" target="sorry">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="pizza" target="salami">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="pizza" target="käse">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="pizza" target="pappnase">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="pizza" target="gulasch">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="pizza" target="gegessen">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="kinder" target="komme">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="kinder" target="pappnase">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="kinder" target="kommt">
+      <data key="d0">28</data>
+    </edge>
+    <edge source="kinder" target="gulasch">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="wings" target="hot">
+      <data key="d0">32</data>
+    </edge>
+    <edge source="orleans" target="new">
+      <data key="d0">38</data>
+    </edge>
+    <edge source="orleans" target="stammtisch">
+      <data key="d0">24</data>
+    </edge>
+    <edge source="orleans" target="tolkien">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="orleans" target="pappnase">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="orleans" target="findet">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="new" target="stammtisch">
+      <data key="d0">24</data>
+    </edge>
+    <edge source="new" target="pappnase">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="new" target="tolkien">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="new" target="findet">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="soll" target="quatsch">
+      <data key="d0">30</data>
+    </edge>
+    <edge source="soll" target="scheiße">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="soll" target="spencer">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="soll" target="scheiß">
+      <data key="d0">29</data>
+    </edge>
+    <edge source="soll" target="arsch">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="soll" target="pappnase">
+      <data key="d0">36</data>
+    </edge>
+    <edge source="soll" target="stammtisch">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="soll" target="tolkien">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="hasse" target="pappnase">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="gegessen" target="bären">
+      <data key="d0">26</data>
+    </edge>
+    <edge source="gegessen" target="pappnase">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="gegessen" target="gulasch">
+      <data key="d0">26</data>
+    </edge>
+    <edge source="bekommen" target="arsch">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="bekommen" target="pappnase">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="schmecken" target="bären">
+      <data key="d0">24</data>
+    </edge>
+    <edge source="schmecken" target="fliesentisch">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="schmecken" target="gulasch">
+      <data key="d0">22</data>
+    </edge>
+    <edge source="bombadil" target="tom">
+      <data key="d0">26</data>
+    </edge>
+    <edge source="stammtisch" target="findet">
+      <data key="d0">47</data>
+    </edge>
+    <edge source="stammtisch" target="pappnase">
+      <data key="d0">31</data>
+    </edge>
+    <edge source="stammtisch" target="tolkien">
+      <data key="d0">38</data>
+    </edge>
+    <edge source="stammtisch" target="sorry">
+      <data key="d0">24</data>
+    </edge>
+    <edge source="stammtisch" target="abgesagt">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="stammtisch" target="pappnasen">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="stammtisch" target="finden">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="stammtisch" target="zwergen">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="bär" target="bären">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="bär" target="laune">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="bären" target="schinken">
+      <data key="d0">21</data>
+    </edge>
+    <edge source="bären" target="samson">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="bären" target="scheiß">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="bären" target="pappnasen">
+      <data key="d0">35</data>
+    </edge>
+    <edge source="bären" target="pappnase">
+      <data key="d0">80</data>
+    </edge>
+    <edge source="bären" target="gulasch">
+      <data key="d0">304</data>
+    </edge>
+    <edge source="bären" target="fliesentisch">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="bären" target="kommt">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="bären" target="sorry">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="bären" target="aldi">
+      <data key="d0">24</data>
+    </edge>
+    <edge source="bären" target="arsch">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="bären" target="schlägt">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="bären" target="kotzen">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="bären" target="magen">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="bären" target="scheiße">
+      <data key="d0">40</data>
+    </edge>
+    <edge source="bären" target="stinkt">
+      <data key="d0">49</data>
+    </edge>
+    <edge source="bären" target="menschen">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="bären" target="suppe">
+      <data key="d0">21</data>
+    </edge>
+    <edge source="bären" target="kohl">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="bären" target="pupsen">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="bären" target="pups">
+      <data key="d0">48</data>
+    </edge>
+    <edge source="bären" target="milch">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="bären" target="burger">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="bären" target="cheese">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="sehe" target="pappnase">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="müssen" target="kommt">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="müssen" target="fahren">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="müssen" target="scheiße">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="müssen" target="pappnase">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="müssen" target="sorry">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="könig" target="pappnase">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="könig" target="pappnasen">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="findet" target="party">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="findet" target="pappnase">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="findet" target="tolkien">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="findet" target="pappnasen">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="findet" target="sorry">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="findet" target="tee">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="kommt" target="mann">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="kommt" target="komme">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="kommt" target="pappnase">
+      <data key="d0">40</data>
+    </edge>
+    <edge source="kommt" target="gulasch">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="kommt" target="pappnasen">
+      <data key="d0">21</data>
+    </edge>
+    <edge source="kommt" target="scheiße">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="kommt" target="krüger">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="kommt" target="freddy">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="kommt" target="fernsehn">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="darf" target="darfst">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="darf" target="toilette">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="darf" target="pappnase">
+      <data key="d0">21</data>
+    </edge>
+    <edge source="bra" target="daniela">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="angst" target="pappnase">
+      <data key="d0">22</data>
+    </edge>
+    <edge source="komme" target="holen">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="komme" target="scheiße">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="komme" target="arsch">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="komme" target="spencer">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="komme" target="pappnase">
+      <data key="d0">42</data>
+    </edge>
+    <edge source="ok" target="pappnase">
+      <data key="d0">25</data>
+    </edge>
+    <edge source="mann" target="pappnase">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="holen" target="pappnase">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="kannst" target="pappnase">
+      <data key="d0">27</data>
+    </edge>
+    <edge source="kannst" target="arsch">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="frau" target="pappnase">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="hole" target="pappnase">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="kerl" target="pappnase">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="haue" target="schädel">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="haue" target="pappnase">
+      <data key="d0">27</data>
+    </edge>
+    <edge source="sagen" target="pappnase">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="vollpfosten" target="arsch">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="vollpfosten" target="pappnase">
+      <data key="d0">36</data>
+    </edge>
+    <edge source="vollpfosten" target="pappnasen">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="quatsch" target="pappnase">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="fressen" target="monster">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="scheiße" target="zwerg">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="scheiße" target="arsch">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="scheiße" target="pappnase">
+      <data key="d0">59</data>
+    </edge>
+    <edge source="scheiße" target="gulasch">
+      <data key="d0">36</data>
+    </edge>
+    <edge source="scheiße" target="stinkt">
+      <data key="d0">36</data>
+    </edge>
+    <edge source="scheiße" target="hose">
+      <data key="d0">35</data>
+    </edge>
+    <edge source="scheiße" target="scheiß">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="scheiße" target="spencer">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="scheiße" target="hackfleisch">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="scheiße" target="pappnasen">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="scheiße" target="mac">
+      <data key="d0">22</data>
+    </edge>
+    <edge source="scheiße" target="burger">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="scheiße" target="donalds">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="scheiße" target="stinkst">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="scheiße" target="toilette">
+      <data key="d0">24</data>
+    </edge>
+    <edge source="scheiße" target="cheese">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="scheiße" target="freddy">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="scheiße" target="sorry">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="scheiße" target="kaffee">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="zwerg" target="pappnase">
+      <data key="d0">48</data>
+    </edge>
+    <edge source="zwerg" target="arsch">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="zwerg" target="hackfleisch">
+      <data key="d0">22</data>
+    </edge>
+    <edge source="zwerg" target="gold">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="wollt" target="pappnase">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="wollte" target="pappnase">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="suppe" target="gulasch">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="suppe" target="kohl">
+      <data key="d0">126</data>
+    </edge>
+    <edge source="suppe" target="pupsen">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="sorry" target="pappnase">
+      <data key="d0">28</data>
+    </edge>
+    <edge source="sorry" target="tolkien">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="sorry" target="hose">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="sorry" target="gulasch">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="sorry" target="stinkt">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="stehen" target="pappnase">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="schaut" target="pappnase">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="ficken" target="spencer">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="arsch" target="toilette">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="arsch" target="tritt">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="arsch" target="pappnase">
+      <data key="d0">106</data>
+    </edge>
+    <edge source="arsch" target="trete">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="arsch" target="stecke">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="arsch" target="pappnasen">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="arsch" target="arschloch">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="arsch" target="spencer">
+      <data key="d0">28</data>
+    </edge>
+    <edge source="arsch" target="ramme">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="arsch" target="hackfleisch">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="arsch" target="freddy">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="arsch" target="gulasch">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="arsch" target="korken">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="kuh" target="pappnase">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="flasche" target="wodka">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="pupsen" target="pappnase">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="pupsen" target="stinkt">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="pupsen" target="kohl">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="pupsen" target="pups">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="pupsen" target="bohnen">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="pupsen" target="pupse">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="stinkt" target="pupse">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="stinkt" target="hose">
+      <data key="d0">48</data>
+    </edge>
+    <edge source="stinkt" target="pappnase">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="stinkt" target="toilette">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="stinkt" target="gulasch">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="stinkt" target="furze">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="stinkt" target="furzen">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="stinkt" target="pups">
+      <data key="d0">35</data>
+    </edge>
+    <edge source="nennt" target="pappnase">
+      <data key="d0">29</data>
+    </edge>
+    <edge source="gold" target="pappnase">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="gold" target="topf">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="gold" target="leprechaun">
+      <data key="d0">21</data>
+    </edge>
+    <edge source="toilette" target="toiletten">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="toilette" target="verstopft">
+      <data key="d0">58</data>
+    </edge>
+    <edge source="toilette" target="hose">
+      <data key="d0">50</data>
+    </edge>
+    <edge source="toilette" target="pappnase">
+      <data key="d0">32</data>
+    </edge>
+    <edge source="toilette" target="durchfall">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="toiletten" target="verstopft">
+      <data key="d0">26</data>
+    </edge>
+    <edge source="toiletten" target="pappnase">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="verstopft" target="pappnase">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="scheiß" target="pappnase">
+      <data key="d0">32</data>
+    </edge>
+    <edge source="scheiß" target="burger">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="scheiß" target="cheese">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="scheiß" target="gulasch">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="fahren" target="auto">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="fahren" target="pappnasen">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="fahren" target="pappnase">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="fahren" target="tschüss">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="fahren" target="fahre">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="fahren" target="fährt">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="fahren" target="bremen">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="auto" target="fährt">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="auto" target="bachem">
+      <data key="d0">26</data>
+    </edge>
+    <edge source="auto" target="tschüss">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="auto" target="pappnase">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="pappnase" target="jon">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="pappnase" target="nennen">
+      <data key="d0">29</data>
+    </edge>
+    <edge source="pappnase" target="schnee">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="pappnase" target="gulasch">
+      <data key="d0">83</data>
+    </edge>
+    <edge source="pappnase" target="hals">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="pappnase" target="reicht">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="pappnase" target="nennst">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="pappnase" target="problem">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="pappnase" target="pappnasen">
+      <data key="d0">78</data>
+    </edge>
+    <edge source="pappnase" target="spencer">
+      <data key="d0">95</data>
+    </edge>
+    <edge source="pappnase" target="hol">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="pappnase" target="tschüss">
+      <data key="d0">38</data>
+    </edge>
+    <edge source="pappnase" target="gib">
+      <data key="d0">33</data>
+    </edge>
+    <edge source="pappnase" target="lege">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="pappnase" target="steht">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="pappnase" target="elmo">
+      <data key="d0">32</data>
+    </edge>
+    <edge source="pappnase" target="ring">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="pappnase" target="mac">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="pappnase" target="sauron">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="pappnase" target="rufe">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="pappnase" target="obelix">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="pappnase" target="behalte">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="pappnase" target="telefon">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="pappnase" target="lache">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="pappnase" target="hose">
+      <data key="d0">27</data>
+    </edge>
+    <edge source="pappnase" target="nerven">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="pappnase" target="finde">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="pappnase" target="knallt">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="pappnase" target="burger">
+      <data key="d0">31</data>
+    </edge>
+    <edge source="pappnase" target="cheese">
+      <data key="d0">27</data>
+    </edge>
+    <edge source="pappnase" target="mach">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="pappnase" target="schau">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="pappnase" target="nase">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="pappnase" target="bremen">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="pappnase" target="arschloch">
+      <data key="d0">29</data>
+    </edge>
+    <edge source="pappnase" target="krüger">
+      <data key="d0">42</data>
+    </edge>
+    <edge source="pappnase" target="freddy">
+      <data key="d0">47</data>
+    </edge>
+    <edge source="pappnase" target="fahre">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="pappnase" target="donalds">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="pappnase" target="tut">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="pappnase" target="boromir">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="pappnase" target="bachem">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="pappnase" target="pech">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="pappnase" target="hackfleisch">
+      <data key="d0">53</data>
+    </edge>
+    <edge source="pappnase" target="kommst">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="pappnase" target="verpiss">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="pappnase" target="sagt">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="pappnase" target="tolkien">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="pappnase" target="monster">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="pappnase" target="peitsche">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="pappnase" target="fliesentisch">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="pappnase" target="furzen">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="pappnase" target="leprechaun">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="jon" target="schnee">
+      <data key="d0">28</data>
+    </edge>
+    <edge source="gulasch" target="hasen">
+      <data key="d0">32</data>
+    </edge>
+    <edge source="gulasch" target="pappnasen">
+      <data key="d0">36</data>
+    </edge>
+    <edge source="gulasch" target="fliesentisch">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="gulasch" target="aldi">
+      <data key="d0">24</data>
+    </edge>
+    <edge source="gulasch" target="magen">
+      <data key="d0">21</data>
+    </edge>
+    <edge source="gulasch" target="kotzen">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="gulasch" target="schlägt">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="gulasch" target="menschen">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="gulasch" target="kohl">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="gulasch" target="cheese">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="gulasch" target="burger">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="gulasch" target="donalds">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="gulasch" target="mac">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="schatz" target="ring">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="mac" target="donalds">
+      <data key="d0">64</data>
+    </edge>
+    <edge source="mac" target="cheese">
+      <data key="d0">26</data>
+    </edge>
+    <edge source="mac" target="burger">
+      <data key="d0">32</data>
+    </edge>
+    <edge source="gib" target="ring">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="party" target="tee">
+      <data key="d0">23</data>
+    </edge>
+    <edge source="stecke" target="korken">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="fährt" target="bachem">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="donalds" target="burger">
+      <data key="d0">28</data>
+    </edge>
+    <edge source="donalds" target="cheese">
+      <data key="d0">24</data>
+    </edge>
+    <edge source="arschloch" target="cheese">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="arschloch" target="göre">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="arschloch" target="burger">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="pommes" target="burger">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="milch" target="pups">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="kotzen" target="glaub">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="hose" target="aa">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="hose" target="durchfall">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="hose" target="stinkst">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="spencer" target="telefon">
+      <data key="d0">27</data>
+    </edge>
+    <edge source="spencer" target="lege">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="spencer" target="elmo">
+      <data key="d0">29</data>
+    </edge>
+    <edge source="spencer" target="leitung">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="hackfleisch" target="pappnasen">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="erweiterung" target="februar">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="civilization" target="storm">
+      <data key="d0">36</data>
+    </edge>
+    <edge source="civilization" target="gathering">
+      <data key="d0">36</data>
+    </edge>
+    <edge source="civilization" target="vi">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="pappnasen" target="tschüss">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="grimes" target="rick">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="salami" target="käse">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="tschüss" target="fahre">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="tschüss" target="bachem">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="steht" target="bild">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="batman" target="robin">
+      <data key="d0">19</data>
+    </edge>
+    <edge source="ring" target="boromir">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="burger" target="cheese">
+      <data key="d0">145</data>
+    </edge>
+    <edge source="burger" target="king">
+      <data key="d0">17</data>
+    </edge>
+    <edge source="harry" target="potter">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="bild" target="zeitung">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="bremen" target="fahre">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="bremen" target="hamburg">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="freddy" target="krüger">
+      <data key="d0">104</data>
+    </edge>
+    <edge source="freddy" target="street">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="freddy" target="elm">
+      <data key="d0">15</data>
+    </edge>
+    <edge source="krüger" target="elm">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="krüger" target="street">
+      <data key="d0">13</data>
+    </edge>
+    <edge source="filme" target="horror">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="hamburg" target="altona">
+      <data key="d0">14</data>
+    </edge>
+    <edge source="gathering" target="storm">
+      <data key="d0">46</data>
+    </edge>
+    <edge source="gathering" target="vi">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="storm" target="vi">
+      <data key="d0">16</data>
+    </edge>
+    <edge source="elm" target="street">
+      <data key="d0">26</data>
+    </edge>
+    <edge source="elm" target="nightmare">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="street" target="nightmare">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="monster" target="macho">
+      <data key="d0">30</data>
+    </edge>
+    <edge source="magen" target="schlägt">
+      <data key="d0">22</data>
+    </edge>
+    <edge source="furze" target="furzen">
+      <data key="d0">20</data>
+    </edge>
+    <edge source="angelina" target="jolie">
+      <data key="d0">21</data>
+    </edge>
+    <edge source="angelina" target="lippen">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="jolie" target="lippen">
+      <data key="d0">18</data>
+    </edge>
+    <edge source="meyers" target="michael">
+      <data key="d0">12</data>
+    </edge>
+    <edge source="faktor" target="x">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="fichtel" target="lied">
+      <data key="d0">11</data>
+    </edge>
+    <edge source="doctor" target="evil">
+      <data key="d0">15</data>
+    </edge>
+  </graph>
+</graphml>

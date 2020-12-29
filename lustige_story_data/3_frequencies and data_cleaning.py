@@ -251,14 +251,17 @@ for post_index in range(1, n_posts + 1):
         if pair in pair_dict:
             pair_dict[pair] += 1
         else:
-            pair_dict[pair] = 0
+            pair_dict[pair] = 1
 
-# Initialize a graph
+# create a graph
 G = nx.Graph()
 
 G.add_edges_from(
-    [(pair[0], pair[1], {"weight": pair_dict[pair]}) for pair in pair_dict]
+    [(pair[0], pair[1], {"weight": pair_dict[pair]}) for pair in pair_dict if pair_dict[pair] > 10]
 )
+# export graph to graphml
+# graph_path = file_words.replace(".joblib", ".graphml")
+# nx.write_graphml(G, graph_path)
 
 nx.draw_networkx(G, with_labels=True)
 
