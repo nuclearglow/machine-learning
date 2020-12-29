@@ -8,6 +8,8 @@ Created on Sat Dec 26 19:11:32 2020
 # Imports
 import os
 import re
+import itertools
+import numpy as np
 import joblib
 from wordcloud import WordCloud
 import networkx as nx
@@ -187,19 +189,24 @@ words_to_keep_empty_index = [
 idx1 = df_words["word_db"].isin(df_empty["word_db"][words_to_keep_empty_index]).values
 
 # Bool vector for words to keep with correct class
-idx2 = df_words['word_classes'].apply(lambda x: set(x).issubset({"Noun", "Verb", "Proper noun"})).values
+idx2 = (
+    df_words["word_classes"]
+    .apply(lambda x: set(x).issubset({"Noun", "Verb", "Proper noun"}))
+    .values
+)
 
 # Bool vector for occurences >= 5
-idx3 = (df_words['occurences'] >= 5).values
+idx3 = (df_words["occurences"] >= 5).values
 
 # Bool vector for non empty strings
-idx4 = df_words['word'].apply(lambda x: len(x.strip()) > 0).values
+idx4 = df_words["word"].apply(lambda x: len(x.strip()) > 0).values
 
 # Bool vector for non number strings
-idx5 = df_words['word'].apply(lambda x: x).values
+numbers_only_regexp = re.compile("^\d+$")
+idx5 = df_words["word"].apply(lambda x: numbers_only_regexp.match(x) is None).values
 
 # Combine conditions
-idx = (idx1 | idx2) & idx3 & idx4
+idx = (idx1 | idx2) & idx3 & idx4 & idx5
 
 # Select relevant words
 df_chosen_words = df_words.iloc[idx]
@@ -216,16 +223,46 @@ plt.show()
 # Get chosen words as list
 list_of_chosen_words = list(set(list(df_chosen_words["word_db"])))
 
-# Build a graph
+# Initialize an adjacency Matrix
+adjacency_matrix = np.zeros((len(list_of_chosen_words), len(list_of_chosen_words)))
+
+# Get number of posts
+n_posts = df_words["post_number_tom"].max()
+
+# dictionary of edge weights
+pair_dict = {}
+
+# iterate posts
+for post_index in range(1, n_posts + 1):
+    # get all chosen words in post
+    chosen_words_in_post = df_chosen_words[
+        df_chosen_words["post_number_tom"] == post_index
+    ]["word_db"].values
+    # create neighboring pairs
+    pairs = [
+        (i, j)
+        for i, j in itertools.product(chosen_words_in_post, chosen_words_in_post)
+        if i != j
+    ]
+    # eliminate identities [a,b] <-> [b,a]
+    pairs = {tuple(pair) for pair in map(sorted, pairs)}
+    # increase weight for each pair
+    for pair in pairs:
+        if pair in pair_dict:
+            pair_dict[pair] += 1
+        else:
+            pair_dict[pair] = 0
+
+# Initialize a graph
 G = nx.Graph()
-for i, word in enumerate(list_of_chosen_words):
-    
-    
-    
-    
-    
-    
-    
+
+G.add_edges_from(
+    [(pair[0], pair[1], {"weight": pair_dict[pair]}) for pair in pair_dict]
+)
+
+nx.draw_networkx(G, with_labels=True)
+
+
 # TODO: Create ordered table with word frequencies, add frequency info to dataset
 
 # TODO: Visual inspection. Missing info for important (frequent nouns) words.
