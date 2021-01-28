@@ -49,12 +49,6 @@ path_data = f"{os.getcwd()}/data/"
 db_file = os.path.abspath(f"{path_data}toms_words_database.json")
 db = tinydb.TinyDB(db_file)
 
-# Load last scrape dataframe
-file_list = os.listdir(path_data)
-scrape_file_name = [x for x in file_list if x.startswith("tom_scrapedata_")]
-scrape_file_name.sort()
-scrape_file_name = scrape_file_name[-1]
-
 # Set sleep time between Leipzig requests
 sleep_time = 1
 
@@ -65,10 +59,10 @@ locale.setlocale(locale.LC_ALL, "de_DE.UTF-8")
 only_alphanumeric_regex = re.compile("[^a-zA-Z0-9öäüÖÄÜß\s]")
 
 # current directory with data file
-data_path = os.path.abspath(f"{os.getcwd()}/data/{scrape_file_name}")
+scrape_data_path = os.path.abspath(f"{os.getcwd()}/data/tom_scrapedata.joblib")
 
 # Load message DataFrame
-df_messages = joblib.load(data_path)
+df_messages = joblib.load(scrape_data_path)
 
 # Function for requests
 def get_word_metadata(word):
@@ -215,7 +209,5 @@ for index, row in df_messages.iterrows():
         df_words = df_words.append(series1.append(series2), ignore_index=True)
 
 # Save data
-filename_out = scrape_file_name.replace("tom_scrapedata_", "data_words_scraped_")
-data_path = os.path.abspath(f"{os.getcwd()}/data/{filename_out}")
-joblib.dump(df_words, data_path)
-
+scrape_data_path = os.path.abspath(f"{os.getcwd()}/data/tom_wordsdata.joblib")
+joblib.dump(df_words, scrape_data_path)
