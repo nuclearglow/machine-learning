@@ -10,69 +10,21 @@ import joblib
 import locale
 import requests
 import pandas as pd
-import tinydb
+import json
 import time
 import math
 import re
 from bs4 import BeautifulSoup
-
-# DataFrame columns
-columns = [
-    "datetime",
-    "year",
-    "month",
-    "day",
-    "weekday",
-    "hour",
-    "minute",
-    "minutes_since_thread_start",
-    "page_number",
-    "post_number_all",
-    "post_number_tom",
-    "message_number_total",
-    "message_number_post",
-    "message_length",
-    "word_number_total",
-    "word_number_message",
-    "word",
-    "word_db",
-    "word_freq",
-    "word_freq_rank",
-    "word_classes",
-]
-
-# Init DataFrame for word based data
-df_words = pd.DataFrame([], columns=columns)
-
-# A tiny db
-path_data = f"{os.getcwd()}/data/"
-db_file = os.path.abspath(f"{path_data}toms_words_database.json")
-db = tinydb.TinyDB(db_file)
-
-# Set sleep time between Leipzig requests
-sleep_time = 1
-
-# switch to german locale
-locale.setlocale(locale.LC_ALL, "de_DE.UTF-8")
-
-# precompile regexp
-only_alphanumeric_regex = re.compile("[^a-zA-Z0-9öäüÖÄÜß\s]")
-
-# current directory with data file
-scrape_data_path = os.path.abspath(f"{os.getcwd()}/data/tom_scrapedata.joblib")
-
-# Load message DataFrame
-df_messages = joblib.load(scrape_data_path)
+import numpy as np
 
 # Function for requests
-def get_word_metadata(word):
+def get_word_metadata(word, word_db):
     # word is handled by title and lowercased
     word_lower, word_title = word.lower(), word.title()
+
     # db lookup, deliver immediately
-    q = tinydb.Query()
-    results = db.search(q.word == word_lower)
-    if results and len(results) > 0:
-        return results[0]
+    if word_lower in word_db:
+        return word_db[word_lower]
 
     print(f"Querying UniLeipzig for {word_lower} and {word_title}")
 
@@ -153,61 +105,113 @@ def get_word_metadata(word):
         ),
     }
 
-    # persist to database
-    db.insert(final_metadata)
+    # to database
+    word_db[word_lower] = final_metadata
 
     return final_metadata
 
+# A tiny db
+path_data = f"{os.getcwd()}/data/"
 
-# Iterate message dataframe
-new_idx = [
-    "word_number_total",
-    "word_number_message",
-    "word",
-    "word_db",
-    "word_freq",
-    "word_freq_rank",
-    "word_classes",
-]
+with open(os.path.abspath(f"{path_data}toms_word_database.json")) as infile:
+    word_db = json.load(infile)
 
-word_counter = 0
-for index, row in df_messages.iterrows():
+    # Set sleep time between Leipzig requests
+    sleep_time = 1
 
-    # Talk
-    print(
-        f"\nLookup words of message number {index} of {df_messages.shape[0]} messages."
-    )
+    # switch to german locale
+    locale.setlocale(locale.LC_ALL, "de_DE.UTF-8")
 
-    # Split message into list of words
-    message = row["message"]
+    # precompile regexp
+    only_alphanumeric_regex = re.compile("[^a-zA-Z0-9öäüÖÄÜß\s]")
 
-    # Replace non alphanumeric chars
-    message = only_alphanumeric_regex.sub("", message)
-    words = message.split(" ")
+    # current directory with data file
+    scrape_data_path = os.path.abspath(f"{os.getcwd()}/data/tom_scrapedata.joblib")
 
-    # Iterate words
-    for word_position, word in enumerate(words):
-        word_counter += 1
-        word_metadata = get_word_metadata(word)
+    # Load message DataFrame
+    df_messages = joblib.load(scrape_data_path)
 
-        # Get word data as list
-        new_data = [
-            word_counter,
-            word_position,
-            word,
-            word_metadata["word"],
-            word_metadata["freq_rank"],
-            word_metadata["freq_class"],
-            word_metadata["word_classes"],
-        ]
+    # DataFrame columns
+    columns = [
+        "datetime",
+        "year",
+        "month",
+        "day",
+        "weekday",
+        "hour",
+        "minute",
+        "minutes_since_thread_start",
+        "page_number",
+        "post_number_all",
+        "post_number_tom",
+        "message_number_total",
+        "message_number_post",
+        "message_length",
+        "word_number_total",
+        "word_number_message",
+        "word",
+        "word_db",
+        "word_freq",
+        "word_freq_rank",
+        "word_classes",
+    ]
 
-        # Create series
-        series1 = row.drop(labels=["message"], inplace=False)
-        series2 = pd.Series(new_data, index=new_idx)
+    # Count words
+    shape = df_messages.shape[0]
 
-        # Concatenate
-        df_words = df_words.append(series1.append(series2), ignore_index=True)
+    memory_words = []
+    word_counter = 0
 
-# Save data
-scrape_data_path = os.path.abspath(f"{os.getcwd()}/data/tom_wordsdata.joblib")
-joblib.dump(df_words, scrape_data_path)
+    for index, row in df_messages.iterrows():
+
+        # Talk
+        print(
+            f"\nLookup words of message number {index} of {shape} messages."
+        )
+
+        # Split message into list of words
+        message = row["message"]
+
+        # Replace non alphanumeric chars
+        message = only_alphanumeric_regex.sub("", message)
+        words = message.split(" ")
+
+        # Iterate words
+        for word_position, word in enumerate(words):
+            word_counter += 1
+            word_metadata = get_word_metadata(word, word_db)
+
+            memory_words.append([
+                row["datetime"],
+                row["year"],
+                row["month"],
+                row["day"],
+                row["weekday"],
+                row["hour"],
+                row["minute"],
+                row["minutes_since_thread_start"],
+                row["page_number"],
+                row["post_number_all"],
+                row["post_number_tom"],
+                row["message_number_total"],
+                row["message_number_post"],
+                row["message_length"],
+                word_counter,
+                word_position,
+                word,
+                word_metadata["word"],
+                word_metadata["freq_rank"],
+                word_metadata["freq_class"],
+                word_metadata["word_classes"],
+            ])
+
+    # Init DataFrame for word based data
+    df_words = pd.DataFrame(memory_words, columns=columns)
+
+    # Save word_db
+    with open(os.path.abspath(f"{path_data}toms_word_database.json"), 'w') as outfile:
+        json.dump(word_db, outfile)
+
+    # Save data
+    scrape_data_path = os.path.abspath(f"{os.getcwd()}/data/tom_wordsdata.joblib")
+    joblib.dump(df_words, scrape_data_path)

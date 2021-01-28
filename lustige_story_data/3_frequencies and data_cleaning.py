@@ -16,13 +16,8 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 # Load last scrape dataframe
-path_data = f"{os.getcwd()}/data/"
-file_list = os.listdir(path_data)
-word_file_name = [x for x in file_list if x.startswith("data_words_scraped_")]
-word_file_name.sort()
-word_file_name = word_file_name[-1]
-file_words = os.path.abspath(f"{path_data}{word_file_name}")
-df_words = joblib.load(file_words)
+path_words_data = f"{os.getcwd()}/data/tom_wordsdata.joblib"
+df_words = joblib.load(path_words_data)
 
 # Add frequencies as column
 word_freqs = df_words["word_db"].value_counts().to_dict()
