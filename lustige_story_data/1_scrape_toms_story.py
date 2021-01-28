@@ -17,11 +17,8 @@ from bs4 import BeautifulSoup
 import joblib
 import os
 
-# Get datetime as string
-dt_string = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-
 # current directory and data file name
-data_path = os.path.abspath(f"{os.getcwd()}/data/tom_scrapedata_{dt_string}.joblib")
+data_path = os.path.abspath(f"{os.getcwd()}/data/tom_scrapedata.joblib")
 
 # DataFrame columns
 columns = [
@@ -42,24 +39,49 @@ columns = [
     "message",
 ]
 
-# Init DataFrame
-df = pd.DataFrame([], columns=columns)
-
 # Set sleep time between scrapes
 sleep_time = 1
 
 # switch to german locale
 locale.setlocale(locale.LC_ALL, "de_DE.UTF-8")
 
-# forum page index
-# TODO: Add update functionality
-last_page = 361
-pages = range(1, last_page + 1)
+# * Scrape the remaining range and save
 
-# Some counters
-post_number_all = 0
-post_number_tom = 0
-message_number_total = 0
+# get the last page from the link on the first page
+url = f"https://www.civforum.de/showthread.php?103910-Lustige-Story-von-tom-bombadil/page1"
+response = requests.get(url)
+soup = BeautifulSoup(response.content, features="html.parser")
+last_page_container = soup.find_all("span", {"class": "first_last"})[0]
+last_page_link = last_page_container.find_all("a")[0].attrs["href"]
+last_page = int(last_page_link .split("page")[1].split("&")[0])
+
+# Init DataFrame or load existing
+if os.path.exists(data_path):
+    df = joblib.load(data_path)
+    # Load counters from df
+    df_last_page = df["page_number"].iloc[-1]
+    last_date = df["datetime"].iloc[-1]
+    date_start = df["datetime"][0]
+    pages = range(df_last_page, last_page + 1)
+
+    # Some counters - increment from last entries in dataframe
+    post_number_all = df["post_number_all"].iloc[-1]
+    post_number_tom = df["post_number_tom"].iloc[-1]
+    message_number_total = df["message_number_total"].iloc[-1]
+
+else:
+    df = pd.DataFrame([], columns=columns)
+    df_last_page = 1
+    last_date = None
+    # Some counters - initialize
+    post_number_all = 0
+    post_number_tom = 0
+    message_number_total = 0
+
+# forum page index
+pages = range(df_last_page, last_page + 1)
+
+print(f"Newsflash: Scraping New Pages {df_last_page} to {last_page}")
 
 # Iterate pages
 for page in pages:
@@ -94,9 +116,6 @@ for page in pages:
         if username != "tom.bombadil":
             continue
 
-        # absolute count for tom
-        post_number_tom += 1
-
         # get the date and time, parse into date
         post_date_container = post.find_all("span", {"class": "postdate"})[0].find_all(
             "span", {"class": "date"}
@@ -116,6 +135,13 @@ for page in pages:
 
         # Get a datetime
         date = datetime.strptime(f"{post_date} {post_time}", "%d. %B %Y %H:%M")
+
+        if last_date != None and date <= last_date:
+            print("Post already in database. Skipping.")
+            continue
+
+        # absolute count for tom
+        post_number_tom += 1
 
         # Get start of thread time
         if post_number_tom == 1:
