@@ -114,3 +114,5 @@ predictions = y_predicted.argmax(axis=1).astype(np.int)
 # Get model accuracy
 model_accuracy = accuracy_score(y_test, predictions, normalize=True)
 
+loaded_layer = model.get_layer('conv_1')
+loaded_layer_output = loaded_layer.outputs
